@@ -133,6 +133,15 @@ namespace RealMortgageCalculator.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Esta aplicación ha sido desarrollada para dar a conocer el hecho de que actualmente para el cálculo de las hipotecas, se utiliza un tipo de interés simple, en el que solo se tiene en cuenta lo que se paga al año, cuando se está pagando en mensualidades. Utilizando un tipo de interés complejo, teniendo en cuenta lo que se paga mes a mes, como debería ser, pagaríamos menos..
+        /// </summary>
+        public static string Manifest1 {
+            get {
+                return ResourceManager.GetString("Manifest1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {
