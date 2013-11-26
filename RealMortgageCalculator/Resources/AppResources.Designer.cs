@@ -88,6 +88,15 @@ namespace RealMortgageCalculator.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Calcular.
+        /// </summary>
+        public static string Calculate {
+            get {
+                return ResourceManager.GetString("Calculate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Bienvenido.
         /// </summary>
         public static string MainWelcome {
@@ -111,6 +120,15 @@ namespace RealMortgageCalculator.Resources {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Firmar.
+        /// </summary>
+        public static string Sign {
+            get {
+                return ResourceManager.GetString("Sign", resourceCulture);
             }
         }
     }
