@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using RealMortgageCalculator.Resources;
+using Microsoft.Phone.Tasks;
 
 namespace RealMortgageCalculator
 {
@@ -19,23 +20,31 @@ namespace RealMortgageCalculator
             InitializeComponent();
 
             // Código de ejemplo para traducir ApplicationBar
-            BuildLocalizedApplicationBar();
         }
 
-        // Código de ejemplo para compilar una ApplicationBar traducida
-        private void BuildLocalizedApplicationBar()
+
+        private void email_Click(object sender, EventArgs e)
         {
-            // Establecer ApplicationBar de la página en una nueva instancia de ApplicationBar.
-            ApplicationBar = new ApplicationBar();
+            EmailComposeTask task = new EmailComposeTask();
+            task.Subject = "Probando";
+            task.Body = "Sample mail message!";
+            task.Show();
+        }
 
-            // Crear un nuevo botón y establecer el valor de texto en la cadena traducida de AppResources.
-            ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-            appBarButton.Text = AppResources.AppBarButtonText;
-           ApplicationBar.Buttons.Add(appBarButton);
+        private void fb_Click(object sender, EventArgs e)
+        {
+            ShareLinkTask shareLinkTask = new ShareLinkTask();
+            shareLinkTask.LinkUri = new Uri("http://www.windowsphonegeek.com", UriKind.Absolute);
+            shareLinkTask.Message = "Sample Facebook message!";
+            shareLinkTask.Show();
+        }
 
-            // Crear un nuevo elemento de menú con la cadena traducida de AppResources.
-            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-            ApplicationBar.MenuItems.Add(appBarMenuItem);
+        private void twitter_Click(object sender, EventArgs e)
+        {
+            ShareLinkTask shareLinkTask = new ShareLinkTask();
+            shareLinkTask.LinkUri = new Uri("http://www.windowsphonegeek.com", UriKind.Absolute);
+            shareLinkTask.Message = "Sample Twitter message!";
+            shareLinkTask.Show();
         }
     }
 }

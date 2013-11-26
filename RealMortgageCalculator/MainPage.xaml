@@ -58,5 +58,15 @@
             Antes de enviarla, quita este código XAML y la propia imagen.-->
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
     </Grid>
-
+    
+    
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar/email.png" x:Name="email" Click="email_Click" Text="Send Email"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar/fb.png" x:Name="fb" Click="fb_Click" Text="Facebook"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar/twitter.png" x:Name="twitter" Click="twitter_Click" Text="Twitter"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    
+    
 </phone:PhoneApplicationPage>
