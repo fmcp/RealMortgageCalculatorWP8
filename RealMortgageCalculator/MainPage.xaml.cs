@@ -30,16 +30,16 @@ namespace RealMortgageCalculator
         private void email_Click(object sender, EventArgs e)
         {
             EmailComposeTask task = new EmailComposeTask();
-            task.Subject = "Probando";
-            task.Body = "Sample mail message!";
+            task.Subject = AppResources.EmailSubject;
+            task.Body = AppResources.EmailContent;
             task.Show();
         }
 
         private void share_Click(object sender, EventArgs e)
         {
             ShareLinkTask shareLinkTask = new ShareLinkTask();
-            shareLinkTask.LinkUri = new Uri("http://www.windowsphonegeek.com", UriKind.Absolute);
-            shareLinkTask.Message = "Sample Twitter message!";
+            shareLinkTask.LinkUri = new Uri("http://www.twitter.com/rmcalc", UriKind.Absolute);
+            shareLinkTask.Message = AppResources.EmailContent;
             shareLinkTask.Show();
         }
     }
