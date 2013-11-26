@@ -51,7 +51,7 @@
                 x:Name="MainMenu" 
                 Background="Transparent"
                 LayoutMode="List"
-                FontSize="{Binding ElementName=fontSizeSlider,Path=Value}"/>
+                FontSize="50"/>
         </Grid>
 
         <!--Quitar la marca de comentarios para ver una cuadrícula de alineación que
