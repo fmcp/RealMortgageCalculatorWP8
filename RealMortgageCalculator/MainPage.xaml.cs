@@ -42,5 +42,10 @@ namespace RealMortgageCalculator
             shareLinkTask.Message = AppResources.EmailContent;
             shareLinkTask.Show();
         }
+
+        private void MainMenuSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
