@@ -88,6 +88,15 @@ namespace RealMortgageCalculator.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Bienvenido.
+        /// </summary>
+        public static string MainWelcome {
+            get {
+                return ResourceManager.GetString("MainWelcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {

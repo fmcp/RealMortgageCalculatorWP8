@@ -134,4 +134,7 @@
   <data name="AppBarMenuItemText" xml:space="preserve">
     <value>Elemento de menú</value>
   </data>
+  <data name="MainWelcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
 </root>
