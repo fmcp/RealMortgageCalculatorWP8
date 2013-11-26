@@ -42,5 +42,10 @@ namespace RealMortgageCalculator
             shareLinkTask.Message = "Sample Twitter message!";
             shareLinkTask.Show();
         }
+
+        private void MainMenuSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
