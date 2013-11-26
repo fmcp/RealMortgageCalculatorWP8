@@ -49,11 +49,9 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <phone:LongListSelector 
                 x:Name="MainMenu" 
-                HorizontalAlignment="Left" 
-                Height="100" 
-                VerticalAlignment="Top" 
-                Width="100"
-                />
+                Background="Transparent"
+                LayoutMode="List"
+                FontSize="{Binding ElementName=fontSizeSlider,Path=Value}"/>
         </Grid>
 
         <!--Quitar la marca de comentarios para ver una cuadrícula de alineación que
