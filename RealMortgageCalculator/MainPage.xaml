@@ -66,9 +66,18 @@
     
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar/email.png" x:Name="email" Click="email_Click" Text="Send Email"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar/fb.png" x:Name="fb" Click="fb_Click" Text="Facebook"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar/twitter.png" x:Name="twitter" Click="twitter_Click" Text="Twitter"/>
+            <shell:ApplicationBarIconButton 
+                    IconUri="/Images/appbar/email.png" 
+                    x:Name="email" 
+                    Click="email_Click" 
+                    Text="Email"/>
+            
+            <shell:ApplicationBarIconButton 
+                   IconUri="/Images/appbar/share.png" 
+                   x:Name="share" 
+                   Click="share_Click" 
+                   Text="Share"
+                />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
     

@@ -35,15 +35,7 @@ namespace RealMortgageCalculator
             task.Show();
         }
 
-        private void fb_Click(object sender, EventArgs e)
-        {
-            ShareLinkTask shareLinkTask = new ShareLinkTask();
-            shareLinkTask.LinkUri = new Uri("http://www.windowsphonegeek.com", UriKind.Absolute);
-            shareLinkTask.Message = "Sample Facebook message!";
-            shareLinkTask.Show();
-        }
-
-        private void twitter_Click(object sender, EventArgs e)
+        private void share_Click(object sender, EventArgs e)
         {
             ShareLinkTask shareLinkTask = new ShareLinkTask();
             shareLinkTask.LinkUri = new Uri("http://www.windowsphonegeek.com", UriKind.Absolute);
