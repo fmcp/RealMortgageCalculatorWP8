@@ -19,7 +19,11 @@ namespace RealMortgageCalculator
         {
             InitializeComponent();
 
-            // Código de ejemplo para traducir ApplicationBar
+            // Lista principal de opciones.
+            List<String> stringsList = new List<String>();
+            stringsList.Add(AppResources.Calculate);
+            stringsList.Add(AppResources.Sign);
+            MainMenu.ItemsSource = stringsList;
         }
 
 
