@@ -45,7 +45,11 @@ namespace RealMortgageCalculator
 
         private void MainMenuSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (e.Equals(AppResources.Calculate)) {
+                NavigationService.Navigate(new Uri("/Calculate.xaml", UriKind.Relative));
+            }else if (e.Equals(AppResources.Sign)) {
 
+            }
         }
     }
 }
