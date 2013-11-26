@@ -97,6 +97,24 @@ namespace RealMortgageCalculator.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Si quieres saber lo que de verdad deberías pagar por tu hipoteca prueba RealMortgageCalculator! www.realtmortgagecalculator.com.
+        /// </summary>
+        public static string EmailContent {
+            get {
+                return ResourceManager.GetString("EmailContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descubre lo que deberías pagar por tu hipoteca.
+        /// </summary>
+        public static string EmailSubject {
+            get {
+                return ResourceManager.GetString("EmailSubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Bienvenido.
         /// </summary>
         public static string MainWelcome {

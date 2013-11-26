@@ -143,6 +143,12 @@
   <data name="Sign" xml:space="preserve">
     <value>Sign</value>
   </data>
+  <data name="EmailContent" xml:space="preserve">
+    <value>Do you want to know how much you should be paying for your mortgage? Try  RealMortgageCalculator! www.twitter.com/rmcalc</value>
+  </data>
+  <data name="EmailSubject" xml:space="preserve">
+    <value>Find out what you should pay for you mortgage</value>
+  </data>
   <data name="Share" xml:space="preserve">
     <value>Share</value>
   </data>
