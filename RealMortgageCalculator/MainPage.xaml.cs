@@ -19,7 +19,7 @@ namespace RealMortgageCalculator
             InitializeComponent();
 
             // Código de ejemplo para traducir ApplicationBar
-            //BuildLocalizedApplicationBar();
+            BuildLocalizedApplicationBar();
         }
 
         // Código de ejemplo para compilar una ApplicationBar traducida
