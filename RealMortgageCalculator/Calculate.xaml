@@ -23,12 +23,20 @@
         <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="{Binding Path=LocalizedResources.CalculateTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.CalculateTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle2Style}"/>
         </StackPanel>
 
         <!--ContentPanel. Colocar aquí el contenido adicional-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+            <StackPanel Background="Transparent">
+                <TextBlock Text="{Binding Path=LocalizedResources.InvertedCapital, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
+                <TextBox x:Name="CapitalBox" IsReadOnly="False" InputScope="Number" />
+                <TextBlock Text="{Binding Path=LocalizedResources.NumberMonth, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
+                <TextBox x:Name="MonthsBox" IsReadOnly="False" InputScope="Number" />
+                <TextBlock Text="{Binding Path=LocalizedResources.AnnualInterest, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
+                <TextBox x:Name="InterestBox" IsReadOnly="False" InputScope="Number" />
+                <Button Name="AcceptButton" Click="OnClickAccept" ClickMode="Press" Content="{Binding Path=LocalizedResources.Calculate, Source={StaticResource LocalizedStrings}}" />
+            </StackPanel>
         </Grid>
     </Grid>
 

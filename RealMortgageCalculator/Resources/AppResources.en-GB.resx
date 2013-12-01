@@ -161,4 +161,19 @@
   <data name="CalculateTitle" xml:space="preserve">
     <value>Calculate interest</value>
   </data>
+  <data name="AnnualInterest" xml:space="preserve">
+    <value>Annual interest rate</value>
+  </data>
+  <data name="EmptyBoxesCaption" xml:space="preserve">
+    <value>Error detected in input</value>
+  </data>
+  <data name="EmptyBoxesMessage" xml:space="preserve">
+    <value>Some text box is empty</value>
+  </data>
+  <data name="InvertedCapital" xml:space="preserve">
+    <value>Inverted capital</value>
+  </data>
+  <data name="NumberMonth" xml:space="preserve">
+    <value>Number of months</value>
+  </data>
 </root>

@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using RealMortgageCalculator.Resources;
 
 namespace RealMortgageCalculator
 {
@@ -15,6 +16,22 @@ namespace RealMortgageCalculator
         public Calculate()
         {
             InitializeComponent();
+        }
+
+        void OnClickAccept(object sender, RoutedEventArgs e)
+        {
+            if (CapitalBox.Text != String.Empty 
+                && MonthsBox.Text != String.Empty 
+                && InterestBox.Text != String.Empty)
+            {
+                float capital = float.Parse(CapitalBox.Text, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
+                float months = float.Parse(MonthsBox.Text, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
+                float interest = float.Parse(InterestBox.Text, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
+            }
+            else
+            {
+                MessageBox.Show(AppResources.EmptyBoxesMessage, AppResources.EmptyBoxesCaption, MessageBoxButton.OK);
+            }
         }
     }
 }
