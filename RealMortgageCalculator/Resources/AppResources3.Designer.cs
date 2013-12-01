@@ -61,6 +61,15 @@ namespace RealMortgageCalculator.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Tabla de amortización.
+        /// </summary>
+        public static string AmortizationChart {
+            get {
+                return ResourceManager.GetString("AmortizationChart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Tasa de interés anual.
         /// </summary>
         public static string AnnualInterest {
@@ -201,6 +210,15 @@ namespace RealMortgageCalculator.Resources {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Resultados.
+        /// </summary>
+        public static string Results {
+            get {
+                return ResourceManager.GetString("Results", resourceCulture);
             }
         }
         

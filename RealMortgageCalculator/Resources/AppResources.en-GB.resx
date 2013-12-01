@@ -176,4 +176,10 @@
   <data name="NumberMonth" xml:space="preserve">
     <value>Number of months</value>
   </data>
+  <data name="AmortizationChart" xml:space="preserve">
+    <value>Amortizatión chart</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Results</value>
+  </data>
 </root>

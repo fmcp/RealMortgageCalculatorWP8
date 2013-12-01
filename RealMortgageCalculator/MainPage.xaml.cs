@@ -50,7 +50,10 @@ namespace RealMortgageCalculator
             }
             else if (e.AddedItems.Contains(AppResources.Sign))
             {
-
+                string webpage = "http://google.com";
+                WebBrowserTask webBrowserTask = new WebBrowserTask();
+                webBrowserTask.Uri = new Uri(webpage, UriKind.Absolute);
+                webBrowserTask.Show();
             }
         }
     }

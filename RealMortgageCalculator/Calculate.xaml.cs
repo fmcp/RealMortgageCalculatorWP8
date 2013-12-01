@@ -24,9 +24,7 @@ namespace RealMortgageCalculator
                 && MonthsBox.Text != String.Empty 
                 && InterestBox.Text != String.Empty)
             {
-                float capital = float.Parse(CapitalBox.Text, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
-                float months = float.Parse(MonthsBox.Text, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
-                float interest = float.Parse(InterestBox.Text, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
+                NavigationService.Navigate(new Uri("/Results.xaml?capital=" + CapitalBox.Text + "&months=" + MonthsBox.Text + "&interest=" + InterestBox.Text, UriKind.Relative));
             }
             else
             {

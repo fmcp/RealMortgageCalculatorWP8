@@ -176,4 +176,10 @@
   <data name="NumberMonth" xml:space="preserve">
     <value>Número de mensualidades</value>
   </data>
+  <data name="AmortizationChart" xml:space="preserve">
+    <value>Tabla de amortización</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Resultados</value>
+  </data>
 </root>
