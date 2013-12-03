@@ -46,10 +46,15 @@ namespace RealMortgageCalculator {
          * Calcula los intereses y la cuota mensual tanto por el sistema tradicional como por el correcto
          **/
 		public void calcular() {
-			cuotaMensual = interesComplejo(capital, interesAnual, periodos);
-			cuotaMensualCV = interesSimple(capital, interesAnual, periodos);
-			interesMes = calcularIM(interesAnual);
-			interesMesCV = calcularIMCuentaVieja(interesAnual);
+
+            //Cálculo de los intereses mensuales:
+            interesMes = calcularIntMes(interesAnual);
+            interesMesCV = calcularIntMesCuentaVieja(interesAnual);
+
+            //Cálculo de las cuotas mensuales
+			cuotaMensual = calcularCuotaMensual(capital, interesMes, periodos);
+			cuotaMensualCV = calcularCuotaMensual(capital, interesMesCV, periodos);
+            
             calcInteres = true;
 		}
 
@@ -58,8 +63,8 @@ namespace RealMortgageCalculator {
          **/
 		public void calcularMatriz()
 		{
-			matriz = new double[3, periodos * 12];
-			matrizCV = new double[3, periodos * 12];
+			matriz = new double[3, periodos];
+			matrizCV = new double[3, periodos];
 
             //Si no han sido calculados los intereses,  se calculan
             if (!this.calcInteres)
@@ -67,8 +72,9 @@ namespace RealMortgageCalculator {
 
 			double deuda = capital, interes = 0, amortizacion = 0;
 
+            //Cálculo de la tabla de amortización real
 			int i = 0;
-			for (i = 0; i < periodos * 12; i++)
+			for (i = 0; i < periodos; i++)
 			{
 				interes = deuda * interesMes;
 				amortizacion = cuotaMensual - interes;
@@ -78,6 +84,8 @@ namespace RealMortgageCalculator {
 				matriz[2, i] = interes;
 			}
 
+
+            //Cálculo de la tabla de amortización aproximada
 			deuda = capital; interes = 0; amortizacion = 0;
 			for (i = 0; i < periodos; i++)
 			{
@@ -88,6 +96,8 @@ namespace RealMortgageCalculator {
 				matrizCV[1, i] = amortizacion;
 				matrizCV[2, i] = interes;
 			}
+
+
             calcMatriz = true;
 		}
 
@@ -100,52 +110,32 @@ namespace RealMortgageCalculator {
 		}
 
         /**
-         * Calcula el interes simple de una hipoteca
-         * @param capital Capital de la hipoteca
-         * @param interes Interés aplicado al préstamo
-         * @param periodos Periodos en los que se dividirá el pago
+         * Calcula el interés mensual aplicable de forma real
+         * @param interes Interés anual
+         * @return Interés mensual
          **/
-		static double interesSimple(double capital, double interes, int periodos) {
-			double im = calcularIMCuentaVieja(interes);
-
-			double A = Math.Pow((1 + im), 12 * periodos);
-			double B = 1 - (1 / A);
-
-			double aux = capital * (im / B);
-			return aux;
-		}
-
-        /**
-         * Calcula el interes complejo de una hipoteca
-         * @param capital Capital de la hipoteca
-         * @param interes Interés aplicado al préstamo
-         * @param periodos Periodos en los que se dividirá el pago
-         **/
-		static double interesComplejo(double capital, double interes, int periodos) {
-			double im = calcularIM(interes);
-
-			double A = Math.Pow((1 + im), 12 * periodos);
-			double B = 1 - (1 / A);
-
-			double aux = capital * (im / B);
-			return aux;
-		}
-
-        //TODO Comentar
-		static double calcularIM(double interes) {
+        static double calcularIntMes(double interes) {
 			return Math.Pow((1.0 + interes), (1.0 / 12.0)) - 1.0;
 		}
 
-        //TODO
-		static double calcularIMCuentaVieja(double interes)	{
+        /**
+         * Calcula el interés mensual aproximado
+         * @param interes Interés anual
+         * @return Interés mensual
+         **/
+		static double calcularIntMesCuentaVieja(double interes)	{
 			return interes / 12.0;
 		}
 
         /**
          *  Calcula la cuota mensual de un préstamo
+         *  @param cantidad Cuantía del préstamo
+         *  @param interes Interés mensual aplicable
+         *  @param periodos Número de períodos en los que se dividirá el pago (mensualidades)
          **/
-		static double calcularCuotaMensual(double cantidad, double interes, int periodos) {
-			return cantidad * (interes / (1 - (1 / (Math.Pow((1 + interes), (12.0 * periodos))))));
+		static double calcularCuotaMensual(double cantidad, double interes, int periodos) 
+        {
+			return cantidad * (interes / (1 - (1 / (Math.Pow((1 + interes), (periodos))))));
 		}
 
         /**

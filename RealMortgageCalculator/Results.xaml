@@ -19,7 +19,10 @@
         <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Loaded="Pivot_Loaded">
             <!--Elemento Pivot uno-->
             <phone:PivotItem Header="{Binding Path=LocalizedResources.Results, Source={StaticResource LocalizedStrings}}">
-                <Grid/>
+                <Grid>
+                    <TextBlock x:Name="asdf"></TextBlock>
+                    
+                </Grid>
             </phone:PivotItem>
 
             <!--Elemento Pivot dos-->

@@ -12,6 +12,9 @@ namespace RealMortgageCalculator
 {
     public partial class Results : PhoneApplicationPage
     {
+
+        private float capital, months, interest;
+
         public Results()
         {
             InitializeComponent();
@@ -23,17 +26,24 @@ namespace RealMortgageCalculator
 
             // Getting parameters.
             string msg = "";
-            float capital = 0, months = 0, interest = 0;
+            capital = 0;
+            months = 0;
+            interest = 0;
             if (NavigationContext.QueryString.TryGetValue("capital", out msg))
                 capital = float.Parse(msg, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
             if (NavigationContext.QueryString.TryGetValue("months", out msg))
                 months = float.Parse(msg, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
             if (NavigationContext.QueryString.TryGetValue("interest", out msg))
                 interest = float.Parse(msg, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
+
+
+
+
         }
 
         private void Pivot_Loaded(object sender, RoutedEventArgs e)
         {
+
 
         }
     }
