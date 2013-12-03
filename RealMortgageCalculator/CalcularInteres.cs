@@ -27,6 +27,7 @@ namespace RealMortgageCalculator {
         private double interesMes;
         private double interesMesCV;
 		private double[,] matriz, matrizCV;
+        private double interesAnualAprox;
 
         /**
          * Constructor de la clase. Crea un
@@ -50,6 +51,8 @@ namespace RealMortgageCalculator {
             //Cálculo de los intereses mensuales:
             interesMes = calcularIntMes(interesAnual);
             interesMesCV = calcularIntMesCuentaVieja(interesAnual);
+            interesAnualAprox = calcularInteresAnualAprox(interesMesCV);
+
 
             //Cálculo de las cuotas mensuales
 			cuotaMensual = calcularCuotaMensual(capital, interesMes, periodos);
@@ -57,6 +60,16 @@ namespace RealMortgageCalculator {
             
             calcInteres = true;
 		}
+
+
+        /**
+         * Calcula el interes anual aplicado por los bancos
+         * @param interes Interes mensual bancario
+         **/
+        public double calcularInteresAnualAprox(double interes)
+        {
+            return Math.Pow(1+interes, 12)-1;
+        }
 
         /**
          * Calcula las matrices de amortización tanto por el sistema tradicional como por el correcto
@@ -159,6 +172,15 @@ namespace RealMortgageCalculator {
             return this.interesMesCV;
         }
 
+        /**
+         * @return Interés mensual por el método de la cuenta la vieja
+         **/
+        public double getInteresAnualCV()
+        {
+            if (!this.calcInteres)
+                this.calcular();
+            return this.interesAnualAprox;
+        }
         /**
          * @return Cuota mensual que será necesario pagar cada mes
          **/

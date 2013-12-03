@@ -45,13 +45,14 @@ namespace RealMortgageCalculator
         {
             CalcularInteres aux = new CalcularInteres(capital,  interest, (int)months);
             aux.calcular();
-            interes.Text += " " + aux.getInteresMes();
-            interesAprox.Text += " " + aux.getInteresMesCV();
-            cuota.Text += " " + aux.getCuotaMensual();
-            cuotaAprox.Text += " " + aux.getCuotaMensualCV();
-            interesAnualAprox.Text += " " + (float)(aux.getInteresMesCV()*12.0);
-            pagoAnual.Text += " " + capital;
-            pagoTotal.Text += " " + interest;
+            interes.Text += " " + String.Format("{0:0.00}", 100 * aux.getInteresMes());
+            interesAprox.Text += " " + String.Format("{0:0.00}",  100*aux.getInteresMesCV());
+            cuota.Text += " " + String.Format("{0:0.00}",  aux.getCuotaMensual());
+            cuotaAprox.Text += " " + String.Format("{0:0.00}", aux.getCuotaMensualCV()); ;
+            interesAnualAprox.Text += " " + (int)(100*aux.getInteresAnualCV());
+            double dif = aux.getCuotaMensualCV() - aux.getCuotaMensual();
+            pagoAnual.Text += " " + String.Format("{0:0.00}", dif * 12);
+            pagoTotal.Text += " " + String.Format("{0:0.00}", dif * months);
 
         }
     }
