@@ -20,8 +20,30 @@
             <!--Elemento Pivot uno-->
             <phone:PivotItem Header="{Binding Path=LocalizedResources.Results, Source={StaticResource LocalizedStrings}}">
                 <Grid>
-                    <TextBlock x:Name="asdf"></TextBlock>
-                    
+                    <StackPanel Orientation="Vertical">
+
+                        <TextBlock x:Name="cuota" FontSize="23" Padding="10">
+                            Cuota mensual:
+                        </TextBlock>
+                        <TextBlock x:Name="cuotaAprox"  FontSize="23" Padding="10">
+                            Cuota mensual bancaria:
+                        </TextBlock>
+                        <TextBlock x:Name="interesAnualAprox" FontSize="23" Padding="10">
+                            Interes anual bancario:
+                        </TextBlock>
+                        <TextBlock x:Name="interes" FontSize="23" Padding="10">
+                            Interes mensual: 
+                        </TextBlock>
+                        <TextBlock x:Name="interesAprox" FontSize="23" Padding="10">
+                            Interes mensual bancario: 
+                        </TextBlock>
+                        <TextBlock x:Name="pagoAnual" FontSize="23" Padding="10">
+                            Pago anual de más: 
+                        </TextBlock>
+                        <TextBlock x:Name="pagoTotal" FontSize="23" Padding="10"> 
+                            Pago total de más: 
+                        </TextBlock>
+                    </StackPanel>
                 </Grid>
             </phone:PivotItem>
 

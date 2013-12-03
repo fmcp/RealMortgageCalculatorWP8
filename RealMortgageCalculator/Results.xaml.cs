@@ -43,7 +43,15 @@ namespace RealMortgageCalculator
 
         private void Pivot_Loaded(object sender, RoutedEventArgs e)
         {
-
+            CalcularInteres aux = new CalcularInteres(capital,  interest, (int)months);
+            aux.calcular();
+            interes.Text += " " + aux.getInteresMes();
+            interesAprox.Text += " " + aux.getInteresMesCV();
+            cuota.Text += " " + aux.getCuotaMensual();
+            cuotaAprox.Text += " " + aux.getCuotaMensualCV();
+            interesAnualAprox.Text += " " + (float)(aux.getInteresMesCV()*12.0);
+            pagoAnual.Text += " " + capital;
+            pagoTotal.Text += " " + interest;
 
         }
     }

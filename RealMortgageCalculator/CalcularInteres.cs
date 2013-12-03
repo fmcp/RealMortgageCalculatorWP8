@@ -34,9 +34,9 @@ namespace RealMortgageCalculator {
          * @param interes Interés aplicado al préstamo
          * @param periodos Periodos en los que se dividirá el pago
          **/
-		CalcularInteres(double capital, double interes, int periodos) {
+		public CalcularInteres(double capital, double interes, int periodos) {
 			this.capital = capital;
-			this.interesAnual = interes;
+			this.interesAnual = interes/100.0;
 			this.periodos = periodos;
             this.calcInteres = false;
             this.calcMatriz = false;
@@ -115,7 +115,7 @@ namespace RealMortgageCalculator {
          * @return Interés mensual
          **/
         static double calcularIntMes(double interes) {
-			return Math.Pow((1.0 + interes), (1.0 / 12.0)) - 1.0;
+            return Math.Pow((1.0 + interes), (1.0 / 12.0)) - 1.0;
 		}
 
         /**
@@ -124,7 +124,7 @@ namespace RealMortgageCalculator {
          * @return Interés mensual
          **/
 		static double calcularIntMesCuentaVieja(double interes)	{
-			return interes / 12.0;
+			return (interes / (double)12.0);
 		}
 
         /**
