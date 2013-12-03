@@ -50,7 +50,7 @@ namespace RealMortgageCalculator
             }
             else if (e.AddedItems.Contains(AppResources.Sign))
             {
-                string webpage = "http://google.com";
+                string webpage = "https://secure.avaaz.org/es/petition/Bancos_y_legisladores_Usen_la_formula_correcta_en_las_hipotecas/";
                 WebBrowserTask webBrowserTask = new WebBrowserTask();
                 webBrowserTask.Uri = new Uri(webpage, UriKind.Absolute);
                 webBrowserTask.Show();

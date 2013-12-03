@@ -31,5 +31,10 @@ namespace RealMortgageCalculator
             if (NavigationContext.QueryString.TryGetValue("interest", out msg))
                 interest = float.Parse(msg, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
         }
+
+        private void Pivot_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
