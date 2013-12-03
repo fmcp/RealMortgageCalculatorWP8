@@ -19,6 +19,7 @@ namespace RealMortgageCalculator {
         //Número de mensualidades en las que se pagará el préstamo
 		private int periodos;
 
+        private Boolean calcInteres, calcMatriz;
 
         //Resultados del cálculo de la hipoteca
         private double cuotaMensual;
@@ -37,6 +38,8 @@ namespace RealMortgageCalculator {
 			this.capital = capital;
 			this.interesAnual = interes;
 			this.periodos = periodos;
+            this.calcInteres = false;
+            this.calcMatriz = false;
 		}
 
         /**
@@ -47,6 +50,7 @@ namespace RealMortgageCalculator {
 			cuotaMensualCV = interesSimple(capital, interesAnual, periodos);
 			interesMes = calcularIM(interesAnual);
 			interesMesCV = calcularIMCuentaVieja(interesAnual);
+            calcInteres = true;
 		}
 
         /**
@@ -56,6 +60,10 @@ namespace RealMortgageCalculator {
 		{
 			matriz = new double[3, periodos * 12];
 			matrizCV = new double[3, periodos * 12];
+
+            //Si no han sido calculados los intereses,  se calculan
+            if (!this.calcInteres)
+                this.calcular();
 
 			double deuda = capital, interes = 0, amortizacion = 0;
 
@@ -80,6 +88,7 @@ namespace RealMortgageCalculator {
 				matrizCV[1, i] = amortizacion;
 				matrizCV[2, i] = interes;
 			}
+            calcMatriz = true;
 		}
 
         /**
@@ -145,6 +154,8 @@ namespace RealMortgageCalculator {
          **/
         public double getInteresMes()
         {
+            if (!this.calcInteres)
+                this.calcular();
             return this.interesMes;
         }
 
@@ -153,6 +164,8 @@ namespace RealMortgageCalculator {
          **/
         public double getInteresMesCV()
         {
+            if (!this.calcInteres)
+                this.calcular();
             return this.interesMesCV;
         }
 
@@ -161,6 +174,8 @@ namespace RealMortgageCalculator {
          **/
         public double getCuotaMensual()
         {
+            if (!this.calcInteres)
+                this.calcular();
             return this.cuotaMensual;
         }
 
@@ -169,6 +184,8 @@ namespace RealMortgageCalculator {
          **/
         public double getCuotaMensualCV()
         {
+            if (!this.calcInteres)
+                this.calcular();
             return this.cuotaMensualCV;
         }
 
@@ -177,6 +194,8 @@ namespace RealMortgageCalculator {
          **/
         public double[,] getMatriz()
         {
+            if (!this.calcMatriz)
+                this.calcularMatriz();
             return this.matriz;
         }
 
@@ -185,6 +204,8 @@ namespace RealMortgageCalculator {
          **/
         public double[,] getMatrizCV()
         {
+            if (!this.calcMatriz)
+                this.calcularMatriz();
             return this.matrizCV;
         }
     }
