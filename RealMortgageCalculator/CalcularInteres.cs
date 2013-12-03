@@ -138,5 +138,54 @@ namespace RealMortgageCalculator {
 		static double calcularCuotaMensual(double cantidad, double interes, int periodos) {
 			return cantidad * (interes / (1 - (1 / (Math.Pow((1 + interes), (12.0 * periodos))))));
 		}
+
+        /**
+         *  Devuelve el interés mensual de la hipoteca
+         *  @return Interés mensual
+         **/
+        public double getInteresMes()
+        {
+            return this.interesMes;
+        }
+
+        /**
+         * @return Interés mensual por el método de la cuenta la vieja
+         **/
+        public double getInteresMesCV()
+        {
+            return this.interesMesCV;
+        }
+
+        /**
+         * @return Cuota mensual que será necesario pagar cada mes
+         **/
+        public double getCuotaMensual()
+        {
+            return this.cuotaMensual;
+        }
+
+        /**
+         * @return Cuota mensual que será necesario pagar cada mes por el método bancario
+         **/
+        public double getCuotaMensualCV()
+        {
+            return this.cuotaMensualCV;
+        }
+
+        /**
+         * @return Matriz de amortización correcta
+         **/
+        public double[,] getMatriz()
+        {
+            return this.matriz;
+        }
+
+        /**
+         * @return Matriz de amortización por el método bancario
+         **/
+        public double[,] getMatrizCV()
+        {
+            return this.matrizCV;
+        }
     }
 }
