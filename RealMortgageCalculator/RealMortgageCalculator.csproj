@@ -92,6 +92,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CalcularInteres.cs" />
     <Compile Include="Calculate.xaml.cs">
       <DependentUpon>Calculate.xaml</DependentUpon>
     </Compile>
