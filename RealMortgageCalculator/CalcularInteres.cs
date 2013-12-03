@@ -4,58 +4,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/**
- *	Crear un objeto, llamar al constructor con los argumentos solicitados.
- *	Llamar al metodo run ejecuta las operaciones
- *	Finalmente en las variables matriz y matrizCV se encuentra el resultado.
- */
-namespace ConsoleApplication1 {
+
+
+namespace RealMortgageCalculator {
+
     class CalcularInteres {
-		static double capitalInvertido, interesAnual;
-		static int periodos;
+        
+        //Capital de la hipoteca: 
+	    private double capital;
 
-		static double cuotaMensual, cuotaMensualCV, interesMes, interesMesCV;
-		static double[,] matriz, matrizCV;
+        //Interés anual aplicado a la hipoteca
+        private  double interesAnual;
 
-		CalcularInteres(double auxCapital, double auxInteres, int auxPeriodos) {
-			capitalInvertido = auxCapital;
-			interesAnual = auxInteres;
-			periodos = auxPeriodos;
+        //Número de mensualidades en las que se pagará el préstamo
+		private int periodos;
+
+
+        //Resultados del cálculo de la hipoteca
+        private double cuotaMensual;
+        private double cuotaMensualCV;
+        private double interesMes;
+        private double interesMesCV;
+		private double[,] matriz, matrizCV;
+
+        /**
+         * Constructor de la clase. Crea un
+         * @param capital Capital de la hipoteca
+         * @param interes Interés aplicado al préstamo
+         * @param periodos Periodos en los que se dividirá el pago
+         **/
+		CalcularInteres(double capital, double interes, int periodos) {
+			this.capital = capital;
+			this.interesAnual = interes;
+			this.periodos = periodos;
 		}
 
-        static void Main(string[] args) {
-			Console.Write("Capital invertido: ");
-			capitalInvertido = 100000;//double.Parse(Console.ReadLine());
-
-			Console.Write("Tasa de interes: ");
-			interesAnual = 0.1;//double.Parse(Console.ReadLine());
-			Console.WriteLine("Interes introducido: " + interesAnual);
-
-			Console.Write("Número de periodos temporales: ");
-			periodos = 30;//int.Parse(Console.ReadLine());
-
-			/////////////////////////////////////////////////////////////////////////////////////
-
-			inicializar();
-			calcular();
-			imprimir();
-
-			Console.ReadLine();
-        }
-
-		static void inicializar() {
-			cuotaMensual = interesComplejo(capitalInvertido, interesAnual, periodos);
-			cuotaMensualCV = interesSimple(capitalInvertido, interesAnual, periodos);
+        /**
+         * Calcula los intereses y la cuota mensual tanto por el sistema tradicional como por el correcto
+         **/
+		public void calcular() {
+			cuotaMensual = interesComplejo(capital, interesAnual, periodos);
+			cuotaMensualCV = interesSimple(capital, interesAnual, periodos);
 			interesMes = calcularIM(interesAnual);
 			interesMesCV = calcularIMCuentaVieja(interesAnual);
 		}
 
-		static void calcular()
+        /**
+         * Calcula las matrices de amortización tanto por el sistema tradicional como por el correcto
+         **/
+		public void calcularMatriz()
 		{
 			matriz = new double[3, periodos * 12];
 			matrizCV = new double[3, periodos * 12];
 
-			double deuda = capitalInvertido, interes = 0, amortizacion = 0;
+			double deuda = capital, interes = 0, amortizacion = 0;
 
 			int i = 0;
 			for (i = 0; i < periodos * 12; i++)
@@ -68,7 +70,7 @@ namespace ConsoleApplication1 {
 				matriz[2, i] = interes;
 			}
 
-			deuda = capitalInvertido; interes = 0; amortizacion = 0;
+			deuda = capital; interes = 0; amortizacion = 0;
 			for (i = 0; i < periodos; i++)
 			{
 				interes = deuda * interesMesCV;
@@ -80,31 +82,20 @@ namespace ConsoleApplication1 {
 			}
 		}
 
-		static void run() {
-			inicializar();
-			calcular();
+        /**
+         * Calcula tanto los intereses como las matrices de amortización
+         **/
+		public void run() {
+			this.calcular();
+			this.calcularMatriz();
 		}
 
-		static void imprimir() {
-			Console.WriteLine("Cuota mensual: " + cuotaMensual * periodos * 12);
-			Console.WriteLine("Cuota mensual CV: " + cuotaMensualCV * periodos * 12);
-			Console.WriteLine("Total resta: " + (cuotaMensualCV * periodos * 12 - cuotaMensual * periodos * 12));
-
-			Console.WriteLine("Interes mes: " + interesMes);
-			Console.WriteLine("Interes mes CV: " + interesMesCV);
-
-			Console.WriteLine("Cuota mensual: " + cuotaMensual);
-			Console.WriteLine("Cuota mensual CV: " + cuotaMensualCV);
-
-			int i = 0;
-			Console.WriteLine("\nCálculo normal\nDeuda\tAmort\tinteres");
-			for (i = 0; i < periodos; i++)
-				Console.WriteLine(matriz[0, i] + "\t" + matriz[1, i] + "\t" + matriz[2, i]);
-			Console.WriteLine("\nCálculo \"Cuenta la vieja\"\nDeuda\tAmort\tinteres");
-			for (i = 0; i < periodos; i++)
-				Console.WriteLine(matrizCV[0, i] + "\t" + matrizCV[1, i] + "\t" + matrizCV[2, i]);
-		}
-
+        /**
+         * Calcula el interes simple de una hipoteca
+         * @param capital Capital de la hipoteca
+         * @param interes Interés aplicado al préstamo
+         * @param periodos Periodos en los que se dividirá el pago
+         **/
 		static double interesSimple(double capital, double interes, int periodos) {
 			double im = calcularIMCuentaVieja(interes);
 
@@ -115,24 +106,35 @@ namespace ConsoleApplication1 {
 			return aux;
 		}
 
-		static double interesComplejo(double capital, double interes, int anyos) {
+        /**
+         * Calcula el interes complejo de una hipoteca
+         * @param capital Capital de la hipoteca
+         * @param interes Interés aplicado al préstamo
+         * @param periodos Periodos en los que se dividirá el pago
+         **/
+		static double interesComplejo(double capital, double interes, int periodos) {
 			double im = calcularIM(interes);
 
-			double A = Math.Pow((1 + im), 12 * anyos);
+			double A = Math.Pow((1 + im), 12 * periodos);
 			double B = 1 - (1 / A);
 
 			double aux = capital * (im / B);
 			return aux;
 		}
 
+        //TODO Comentar
 		static double calcularIM(double interes) {
 			return Math.Pow((1.0 + interes), (1.0 / 12.0)) - 1.0;
 		}
 
+        //TODO
 		static double calcularIMCuentaVieja(double interes)	{
 			return interes / 12.0;
 		}
 
+        /**
+         *  Calcula la cuota mensual de un préstamo
+         **/
 		static double calcularCuotaMensual(double cantidad, double interes, int periodos) {
 			return cantidad * (interes / (1 - (1 / (Math.Pow((1 + interes), (12.0 * periodos))))));
 		}
