@@ -54,6 +54,14 @@ namespace RealMortgageCalculator
             pagoAnual.Text += " " + String.Format("{0:0.00}", dif * 12);
             pagoTotal.Text += " " + String.Format("{0:0.00}", dif * months);
 
+            aux.calcularMatriz();
+
+            List<TableElement> ElementsList = aux.getMatrizCV();
+
+            foreach(TableElement te in ElementsList)
+                Lista.Items.Add(te);
+
+
         }
     }
 }

@@ -82,7 +82,54 @@
             </phone:PivotItem>
 
             <phone:PivotItem Header="{Binding Path=LocalizedResources.AmortizationChart, Source={StaticResource LocalizedStrings}}">
-                <Grid/>
+
+                <ScrollViewer>
+                
+                <Grid>
+                    <StackPanel Orientation="Vertical">
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock  Width="50" HorizontalAlignment="Center"    TextWrapping="Wrap" Padding="5,5,5,5"> Mes </TextBlock>
+                            <TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5"> Deuda </TextBlock>
+                            <TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5" >Amortización</TextBlock>
+                            <TextBlock  Width="150" HorizontalAlignment="Center"   TextWrapping="Wrap" Padding="5,5,5,5"> Interés </TextBlock>
+                        </StackPanel>
+                        <ItemsControl x:Name="Lista" ItemsSource="{Binding}"  VerticalAlignment="Top"    Margin="0,0,0,0"  HorizontalAlignment="left" Width="Auto" >
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Vertical"  VerticalAlignment="Top">
+                                    </StackPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+
+                                        <Grid HorizontalAlignment="Stretch">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="50" />
+                                                <ColumnDefinition Width="150" />
+                                                <ColumnDefinition Width="150" />
+                                                <ColumnDefinition Width="150" />
+
+                                            </Grid.ColumnDefinitions>
+                                            
+                                            <TextBlock Text="{Binding mes}" HorizontalAlignment="Center"  Grid.Column="0"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+                                            <TextBlock Text="{Binding deuda}"   Grid.Column="1" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+                                            <TextBlock Text="{Binding amortizacion}"   Grid.Column="2" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+                                            <TextBlock Text="{Binding interes}"  Grid.Column="3"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+                                        </Grid>
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Grid>
+                </ScrollViewer>
             </phone:PivotItem>
         </phone:Pivot>
 

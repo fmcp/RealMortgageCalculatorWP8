@@ -93,10 +93,10 @@ namespace RealMortgageCalculator {
 				amortizacion = cuotaMensual - interes;
 				deuda = deuda - amortizacion;
                 TableElement element = new TableElement();
-                element.deuda = deuda;
-                element.amortizacion = amortizacion;
-                element.interes = interes;
-                element.mes = i;
+                element.deuda = String.Format("{0:0.00}", deuda); ;
+                element.amortizacion = String.Format("{0:0.00}", amortizacion); ;
+                element.interes = String.Format("{0:0.00}", interes);
+                element.mes = ""+(i+1);
                 matriz.Add(element);
 			}
 
@@ -109,11 +109,11 @@ namespace RealMortgageCalculator {
 				amortizacion = cuotaMensualCV - interes;
 				deuda = deuda - amortizacion;
                 TableElement element = new TableElement();
-                element.deuda = deuda;
-                element.amortizacion = amortizacion;
-                element.interes = interes;
-                element.mes = i;
-                matriz.Add(element);
+                element.deuda = String.Format("{0:0.00}", deuda); ;
+                element.amortizacion = String.Format("{0:0.00}", amortizacion); ;
+                element.interes = String.Format("{0:0.00}", interes);
+                element.mes = ""+(i+1);
+                matrizCV.Add(element);
 			}
 
 
