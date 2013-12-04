@@ -26,7 +26,7 @@ namespace RealMortgageCalculator {
         private double cuotaMensualCV;
         private double interesMes;
         private double interesMesCV;
-		private double[,] matriz, matrizCV;
+        private List<TableElement> matriz, matrizCV;
         private double interesAnualAprox;
 
         /**
@@ -76,8 +76,8 @@ namespace RealMortgageCalculator {
          **/
 		public void calcularMatriz()
 		{
-			matriz = new double[3, periodos];
-			matrizCV = new double[3, periodos];
+			matriz = new List<TableElement>();
+            matrizCV = new List<TableElement>();
 
             //Si no han sido calculados los intereses,  se calculan
             if (!this.calcInteres)
@@ -92,9 +92,12 @@ namespace RealMortgageCalculator {
 				interes = deuda * interesMes;
 				amortizacion = cuotaMensual - interes;
 				deuda = deuda - amortizacion;
-				matriz[0, i] = deuda;
-				matriz[1, i] = amortizacion;
-				matriz[2, i] = interes;
+                TableElement element = new TableElement();
+                element.deuda = deuda;
+                element.amortizacion = amortizacion;
+                element.interes = interes;
+                element.mes = i;
+                matriz.Add(element);
 			}
 
 
@@ -105,9 +108,12 @@ namespace RealMortgageCalculator {
 				interes = deuda * interesMesCV;
 				amortizacion = cuotaMensualCV - interes;
 				deuda = deuda - amortizacion;
-				matrizCV[0, i] = deuda;
-				matrizCV[1, i] = amortizacion;
-				matrizCV[2, i] = interes;
+                TableElement element = new TableElement();
+                element.deuda = deuda;
+                element.amortizacion = amortizacion;
+                element.interes = interes;
+                element.mes = i;
+                matriz.Add(element);
 			}
 
 
@@ -204,7 +210,7 @@ namespace RealMortgageCalculator {
         /**
          * @return Matriz de amortización correcta
          **/
-        public double[,] getMatriz()
+        public List<TableElement> getMatriz()
         {
             if (!this.calcMatriz)
                 this.calcularMatriz();
@@ -214,7 +220,7 @@ namespace RealMortgageCalculator {
         /**
          * @return Matriz de amortización por el método bancario
          **/
-        public double[,] getMatrizCV()
+        public List<TableElement> getMatrizCV()
         {
             if (!this.calcMatriz)
                 this.calcularMatriz();
