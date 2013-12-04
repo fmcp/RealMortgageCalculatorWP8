@@ -59,6 +59,11 @@ namespace RealMortgageCalculator
             List<TableElement> ElementsList = aux.getMatrizCV();
 
             foreach(TableElement te in ElementsList)
+                ListaCV.Items.Add(te);
+
+            ElementsList = aux.getMatriz();
+
+            foreach (TableElement te in ElementsList)
                 Lista.Items.Add(te);
 
 
