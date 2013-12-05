@@ -1,4 +1,6 @@
-﻿<phone:PhoneApplicationPage
+﻿<!-- Es necesario poner todas las cadenas en ambos idiomas, por ahora están puestas directamente en el código-->
+    
+    <phone:PhoneApplicationPage
     x:Class="RealMortgageCalculator.Results"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
