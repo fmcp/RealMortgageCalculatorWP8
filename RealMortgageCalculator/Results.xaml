@@ -23,7 +23,6 @@
             <phone:PivotItem Header="{Binding Path=LocalizedResources.Results, Source={StaticResource LocalizedStrings}}">
                 <Grid>
                     <StackPanel Orientation="Vertical">
-
                         <TextBlock x:Name="cuota" FontSize="23" Padding="10">
                             Cuota mensual:
                         </TextBlock>
@@ -61,10 +60,23 @@
                     </Grid>
                 </phone:PivotItem.Header>
                 <ScrollViewer>
+                    
                     <Grid>
+                        
                         <StackPanel Orientation="Vertical">
-
-                            <StackPanel Orientation="Horizontal">
+                            <!-- Cargando...-->
+                            <TextBlock 
+                                x:Name="loading"
+                                FontSize="23"  
+                                Padding="10"
+                                HorizontalAlignment="Center">
+                                Cargando...
+                            </TextBlock>
+                            <ProgressBar x:Name="progressBar" IsIndeterminate="True" ></ProgressBar>
+                            
+                            
+                            
+                            <StackPanel Orientation="Horizontal" x:Name="titles" Visibility="Visible">
                                 <TextBlock  Width="50" HorizontalAlignment="Center"    TextWrapping="Wrap" Padding="5,5,5,5"> Mes</TextBlock>
                                 <TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5"> Deuda</TextBlock>
                                 <TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5" >Amortización</TextBlock>
@@ -114,6 +126,7 @@
                 </ScrollViewer>
             </phone:PivotItem>
 
+            <!-- Tercer Pivot item-->
             <phone:PivotItem >
 
                 <phone:PivotItem.Header>
@@ -127,6 +140,16 @@
                 <ScrollViewer>
                     <Grid>
                         <StackPanel Orientation="Vertical">
+
+                            <!-- Cargando...-->
+                            <TextBlock 
+                                x:Name="loading2"
+                                FontSize="23"  
+                                Padding="10"
+                                HorizontalAlignment="Center">
+                                Cargando...
+                            </TextBlock>
+                            <ProgressBar x:Name="progressBar2" IsIndeterminate="True" ></ProgressBar>
 
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock  Width="50" HorizontalAlignment="Center"    TextWrapping="Wrap" Padding="5,5,5,5"> Mes</TextBlock>

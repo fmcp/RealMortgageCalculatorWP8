@@ -26,7 +26,7 @@ namespace RealMortgageCalculator {
         private double cuotaMensualCV;
         private double interesMes;
         private double interesMesCV;
-        private List<TableElement> matriz, matrizCV;
+        //private List<TableElement> matriz, matrizCV;
         private double interesAnualAprox;
 
         /**
@@ -71,9 +71,76 @@ namespace RealMortgageCalculator {
             return Math.Pow(1+interes, 12)-1;
         }
 
+
+        public Task<List<TableElement>> calcularMatriz()
+        {
+            return Task.Run(() =>
+            {
+                List<TableElement> matriz = new List<TableElement>();
+
+                //Si no han sido calculados los intereses,  se calculan
+                if (!this.calcInteres)
+                    this.calcular();
+
+                double deuda = capital, interes = 0, amortizacion = 0;
+
+                //Cálculo de la tabla de amortización real
+                int i = 0;
+                for (i = 0; i < periodos; i++)
+                {
+                    interes = deuda * interesMes;
+                    amortizacion = cuotaMensual - interes;
+                    deuda = deuda - amortizacion;
+                    TableElement element = new TableElement();
+                    element.deuda = String.Format("{0:0.00}", deuda); ;
+                    element.amortizacion = String.Format("{0:0.00}", amortizacion); ;
+                    element.interes = String.Format("{0:0.00}", interes);
+                    element.mes = "" + (i + 1);
+                    matriz.Add(element);
+                }
+
+                return matriz;
+            });
+        }
+
+
+        public Task<List<TableElement>> calcularMatrizCV()
+        {
+            return Task.Run(() =>
+            {
+                List<TableElement> matrizCV = new List<TableElement>();
+
+                //Si no han sido calculados los intereses,  se calculan
+                if (!this.calcInteres)
+                    this.calcular();
+
+                double deuda = capital, interes = 0, amortizacion = 0;
+
+                //Cálculo de la tabla de amortización aproximada
+                int i;
+                for (i = 0; i < periodos; i++)
+                {
+                    interes = deuda * interesMesCV;
+                    amortizacion = cuotaMensualCV - interes;
+                    deuda = deuda - amortizacion;
+                    TableElement element = new TableElement();
+                    element.deuda = String.Format("{0:0.00}", deuda); ;
+                    element.amortizacion = String.Format("{0:0.00}", amortizacion); ;
+                    element.interes = String.Format("{0:0.00}", interes);
+                    element.mes = "" + (i + 1);
+                    matrizCV.Add(element);
+                }
+
+                return matrizCV;
+            });
+        }
+
+
+
         /**
          * Calcula las matrices de amortización tanto por el sistema tradicional como por el correcto
          **/
+        /*
 		public void calcularMatriz()
 		{
 			matriz = new List<TableElement>();
@@ -119,6 +186,7 @@ namespace RealMortgageCalculator {
 
             calcMatriz = true;
 		}
+         */
 
         /**
          * Calcula tanto los intereses como las matrices de amortización
@@ -210,21 +278,24 @@ namespace RealMortgageCalculator {
         /**
          * @return Matriz de amortización correcta
          **/
+        /*
         public List<TableElement> getMatriz()
         {
             if (!this.calcMatriz)
                 this.calcularMatriz();
             return this.matriz;
         }
-
+        */
         /**
          * @return Matriz de amortización por el método bancario
          **/
+        /*
         public List<TableElement> getMatrizCV()
         {
             if (!this.calcMatriz)
                 this.calcularMatriz();
             return this.matrizCV;
         }
+         * */
     }
 }

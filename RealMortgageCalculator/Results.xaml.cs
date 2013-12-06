@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace RealMortgageCalculator
 {
@@ -14,6 +16,8 @@ namespace RealMortgageCalculator
     {
 
         private float capital, months, interest;
+        CalcularInteres calcInt;
+
 
         public Results()
         {
@@ -43,30 +47,41 @@ namespace RealMortgageCalculator
 
         private void Pivot_Loaded(object sender, RoutedEventArgs e)
         {
-            CalcularInteres aux = new CalcularInteres(capital,  interest, (int)months);
-            aux.calcular();
-            interes.Text += " " + String.Format("{0:0.00}", 100 * aux.getInteresMes());
-            interesAprox.Text += " " + String.Format("{0:0.00}",  100*aux.getInteresMesCV());
-            cuota.Text += " " + String.Format("{0:0.00}",  aux.getCuotaMensual());
-            cuotaAprox.Text += " " + String.Format("{0:0.00}", aux.getCuotaMensualCV()); ;
-            interesAnualAprox.Text += " " + (int)(100*aux.getInteresAnualCV());
-            double dif = aux.getCuotaMensualCV() - aux.getCuotaMensual();
+            calcInt = new CalcularInteres(capital,  interest, (int)months);
+            calcInt.calcular();
+            interes.Text += " " + String.Format("{0:0.00}", 100 * calcInt.getInteresMes());
+            interesAprox.Text += " " + String.Format("{0:0.00}", 100 * calcInt.getInteresMesCV());
+            cuota.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensual());
+            cuotaAprox.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensualCV()); ;
+            interesAnualAprox.Text += " " + (int)(100 * calcInt.getInteresAnualCV());
+            double dif = calcInt.getCuotaMensualCV() - calcInt.getCuotaMensual();
             pagoAnual.Text += " " + String.Format("{0:0.00}", dif * 12);
             pagoTotal.Text += " " + String.Format("{0:0.00}", dif * months);
+            loadTables();
+        }
 
-            aux.calcularMatriz();
-
-            List<TableElement> ElementsList = aux.getMatrizCV();
-
-            foreach(TableElement te in ElementsList)
-                ListaCV.Items.Add(te);
-
-            ElementsList = aux.getMatriz();
+        /**
+         * Load the amortization tables into the GUI
+         * */
+        private async void loadTables()
+        {
+            List<TableElement> ElementsList = await calcInt.calcularMatriz();
 
             foreach (TableElement te in ElementsList)
                 Lista.Items.Add(te);
 
 
+
+            progressBar.Visibility = Visibility.Collapsed;
+            loading.Visibility = Visibility.Collapsed;
+
+            ElementsList = await calcInt.calcularMatrizCV();
+            foreach (TableElement te in ElementsList)
+                ListaCV.Items.Add(te);
+
+            progressBar2.Visibility = Visibility.Collapsed;
+            loading2.Visibility = Visibility.Collapsed;
         }
+
     }
 }
