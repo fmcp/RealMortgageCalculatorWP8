@@ -182,4 +182,37 @@
   <data name="Results" xml:space="preserve">
     <value>Results</value>
   </data>
+  <data name="Amortization" xml:space="preserve">
+    <value>Amortization</value>
+  </data>
+  <data name="Debt" xml:space="preserve">
+    <value>Debt</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="MonthlyFee" xml:space="preserve">
+    <value>Monthly fee:</value>
+  </data>
+  <data name="MonthlyFeeBank" xml:space="preserve">
+    <value>Monthly bank fee:</value>
+  </data>
+  <data name="MonthlyInterest" xml:space="preserve">
+    <value>Monthly interest:</value>
+  </data>
+  <data name="MonthlyInterestBank" xml:space="preserve">
+    <value>Monthly bank interest:</value>
+  </data>
+  <data name="TotalPay" xml:space="preserve">
+    <value>Total pay:</value>
+  </data>
+  <data name="YearInterestBank" xml:space="preserve">
+    <value>Year interest bank:</value>
+  </data>
+  <data name="YearPay" xml:space="preserve">
+    <value>Total paid in a year:</value>
+  </data>
 </root>
