@@ -72,23 +72,28 @@
                         
                         <StackPanel Orientation="Vertical">
                             <!-- Cargando...-->
-                            <TextBlock 
+							<TextBlock 
                                 x:Name="loading"
                                 FontSize="23"  
                                 Padding="10"
-                                HorizontalAlignment="Center">
-                                Cargando...
-                            </TextBlock>
+                                HorizontalAlignment="Center"
+                                    Text="{Binding Path=LocalizedResources.loading, Source={StaticResource LocalizedStrings}}"
+                                  >
+							</TextBlock>
                             <ProgressBar x:Name="progressBar" IsIndeterminate="True" ></ProgressBar>
                             
                             
                             
                             <StackPanel Orientation="Horizontal" x:Name="titles" Visibility="Visible">
-                                <TextBlock  Width="50" HorizontalAlignment="Center"    TextWrapping="Wrap" Padding="5,5,5,5"> Mes</TextBlock>
-                                <TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5"> Deuda</TextBlock>
-                                <TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5" >Amortización</TextBlock>
-                                <TextBlock  Width="150" HorizontalAlignment="Center"   TextWrapping="Wrap" Padding="5,5,5,5"> Interés</TextBlock>
-                            </StackPanel>
+								<TextBlock  Width="50" HorizontalAlignment="Center"    TextWrapping="Wrap" Padding="5,5,5,5"
+									Text="{Binding Path=LocalizedResources.Month, Source={StaticResource LocalizedStrings}}"/>
+								<TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5"
+									Text="{Binding Path=LocalizedResources.Debt, Source={StaticResource LocalizedStrings}}"/>
+								<TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5"
+									Text="{Binding Path=LocalizedResources.Amortization, Source={StaticResource LocalizedStrings}}"/>
+								<TextBlock  Width="150" HorizontalAlignment="Center"   TextWrapping="Wrap" Padding="5,5,5,5"
+									Text="{Binding Path=LocalizedResources.Interest, Source={StaticResource LocalizedStrings}}"/>
+							</StackPanel>
 
                             <ItemsControl x:Name="Lista" ItemsSource="{Binding}"  VerticalAlignment="Top"    Margin="0,0,0,0"  HorizontalAlignment="left" Width="Auto" >
 
@@ -115,10 +120,18 @@
 
                                                 </Grid.ColumnDefinitions>
 
-                                                <TextBlock Text="{Binding mes}" HorizontalAlignment="Center"  Grid.Column="0"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
-                                                <TextBlock Text="{Binding deuda}"   Grid.Column="1" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
-                                                <TextBlock Text="{Binding amortizacion}"   Grid.Column="2" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
-                                                <TextBlock Text="{Binding interes}"  Grid.Column="3"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+												<TextBlock
+													Text="{Binding Path=LocalizedResources.Month, Source={StaticResource LocalizedStrings}}"
+													HorizontalAlignment="Center"  Grid.Column="0"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+												<TextBlock
+													Text="{Binding Path=LocalizedResources.Debt, Source={StaticResource LocalizedStrings}}"
+												Grid.Column="1" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+												<TextBlock
+													Text="{Binding Path=LocalizedResources.Amortization, Source={StaticResource LocalizedStrings}}"
+													Grid.Column="2" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+												<TextBlock
+													Text="{Binding Path=LocalizedResources.Interest, Source={StaticResource LocalizedStrings}}"
+													Grid.Column="3"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
                                             </Grid>
 
                                         </StackPanel>
@@ -159,11 +172,15 @@
                             <ProgressBar x:Name="progressBar2" IsIndeterminate="True" ></ProgressBar>
 
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock  Width="50" HorizontalAlignment="Center"    TextWrapping="Wrap" Padding="5,5,5,5"> Mes</TextBlock>
-                                <TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5"> Deuda</TextBlock>
-                                <TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5" >Amortización</TextBlock>
-                                <TextBlock  Width="150" HorizontalAlignment="Center"   TextWrapping="Wrap" Padding="5,5,5,5"> Interés</TextBlock>
-                            </StackPanel>
+								<TextBlock  Width="50" HorizontalAlignment="Center"    TextWrapping="Wrap" Padding="5,5,5,5"
+									Text="{Binding Path=LocalizedResources.Month, Source={StaticResource LocalizedStrings}}"/>
+								<TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5"
+									Text="{Binding Path=LocalizedResources.Debt, Source={StaticResource LocalizedStrings}}"/>
+								<TextBlock  Width="150" HorizontalAlignment="Center"  TextWrapping="Wrap" Padding="5,5,5,5"
+									Text="{Binding Path=LocalizedResources.Amortization, Source={StaticResource LocalizedStrings}}"/>
+								<TextBlock  Width="150" HorizontalAlignment="Center"   TextWrapping="Wrap" Padding="5,5,5,5"
+									Text="{Binding Path=LocalizedResources.Interest, Source={StaticResource LocalizedStrings}}"/>
+							</StackPanel>
 
                             <ItemsControl x:Name="ListaCV" ItemsSource="{Binding}"  VerticalAlignment="Top"    Margin="0,0,0,0"  HorizontalAlignment="left" Width="Auto" >
 
@@ -190,10 +207,18 @@
 
                                                 </Grid.ColumnDefinitions>
 
-                                                <TextBlock Text="{Binding mes}" HorizontalAlignment="Center"  Grid.Column="0"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
-                                                <TextBlock Text="{Binding deuda}"   Grid.Column="1" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
-                                                <TextBlock Text="{Binding amortizacion}"   Grid.Column="2" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
-                                                <TextBlock Text="{Binding interes}"  Grid.Column="3"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+												<TextBlock 
+													Text="{Binding Path=LocalizedResources.Month, Source={StaticResource LocalizedStrings}}"
+													HorizontalAlignment="Center"  Grid.Column="0"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+												<TextBlock
+													Text="{Binding Path=LocalizedResources.Debt, Source={StaticResource LocalizedStrings}}"
+													Grid.Column="1" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+                                                <TextBlock
+													Text="{Binding Path=LocalizedResources.Amortization, Source={StaticResource LocalizedStrings}}"
+													Grid.Column="2" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+												<TextBlock
+													Text="{Binding Path=LocalizedResources.Interest, Source={StaticResource LocalizedStrings}}"
+													Grid.Column="3"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
                                             </Grid>
 
                                         </StackPanel>

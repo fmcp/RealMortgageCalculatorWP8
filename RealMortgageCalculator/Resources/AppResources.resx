@@ -182,6 +182,21 @@
   <data name="Results" xml:space="preserve">
     <value>Resultados</value>
   </data>
+  <data name="Amortization" xml:space="preserve">
+    <value>Amortización</value>
+  </data>
+  <data name="Debt" xml:space="preserve">
+    <value>Deuda</value>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>Interés</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Cargando...</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Mes</value>
+  </data>
   <data name="MonthlyFee" xml:space="preserve">
     <value>Cuota Mensual:</value>
   </data>

@@ -61,6 +61,15 @@ namespace RealMortgageCalculator.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Amortización.
+        /// </summary>
+        public static string Amortization {
+            get {
+                return ResourceManager.GetString("Amortization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Tabla de amortización.
         /// </summary>
         public static string AmortizationChart {
@@ -124,6 +133,15 @@ namespace RealMortgageCalculator.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Deuda.
+        /// </summary>
+        public static string Debt {
+            get {
+                return ResourceManager.GetString("Debt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Si quieres saber lo que de verdad deberías pagar por tu hipoteca prueba RealMortgageCalculator! www.twitter.com/rmcalc.
         /// </summary>
         public static string EmailContent {
@@ -160,11 +178,29 @@ namespace RealMortgageCalculator.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Interés.
+        /// </summary>
+        public static string Interest {
+            get {
+                return ResourceManager.GetString("Interest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Capital invertido.
         /// </summary>
         public static string InvertedCapital {
             get {
                 return ResourceManager.GetString("InvertedCapital", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cargando....
+        /// </summary>
+        public static string loading {
+            get {
+                return ResourceManager.GetString("loading", resourceCulture);
             }
         }
         
@@ -183,6 +219,15 @@ namespace RealMortgageCalculator.Resources {
         public static string Manifest {
             get {
                 return ResourceManager.GetString("Manifest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mes.
+        /// </summary>
+        public static string Month {
+            get {
+                return ResourceManager.GetString("Month", resourceCulture);
             }
         }
         
