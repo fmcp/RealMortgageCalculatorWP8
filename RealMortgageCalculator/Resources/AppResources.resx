@@ -182,4 +182,25 @@
   <data name="Results" xml:space="preserve">
     <value>Resultados</value>
   </data>
+  <data name="MonthlyFee" xml:space="preserve">
+    <value>Cuota Mensual:</value>
+  </data>
+  <data name="MonthlyFeeBank" xml:space="preserve">
+    <value>Cuota mensual bancaria:</value>
+  </data>
+  <data name="MonthlyInterest" xml:space="preserve">
+    <value>Interes mensual:</value>
+  </data>
+  <data name="MonthlyInterestBank" xml:space="preserve">
+    <value>Interes mensual bancario:</value>
+  </data>
+  <data name="TotalPay" xml:space="preserve">
+    <value>Pago total de más:</value>
+  </data>
+  <data name="YearInterestBank" xml:space="preserve">
+    <value>Interes anual bancario:</value>
+  </data>
+  <data name="YearPay" xml:space="preserve">
+    <value>Pago anual de más:</value>
+  </data>
 </root>
