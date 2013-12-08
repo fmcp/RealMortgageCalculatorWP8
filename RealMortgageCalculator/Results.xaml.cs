@@ -66,15 +66,15 @@ namespace RealMortgageCalculator
             foreach (TableElement te in ElementsList)
                 Lista.Items.Add(te);
 
-            //progressBar.Visibility = Visibility.Collapsed;
-            //loading.Visibility = Visibility.Collapsed;
+            progressBar.Visibility = Visibility.Collapsed;
+            loading.Visibility = Visibility.Collapsed;
 
             ElementsList = await calcInt.calcularMatrizCV();
             foreach (TableElement te in ElementsList)
                 ListaCV.Items.Add(te);
 
-            //progressBar2.Visibility = Visibility.Collapsed;
-            //loading2.Visibility = Visibility.Collapsed;
+            progressBar2.Visibility = Visibility.Collapsed;
+            loading2.Visibility = Visibility.Collapsed;
         }
 
     }

@@ -48,7 +48,8 @@ namespace RealMortgageCalculator
                 && MonthsBox.Text != String.Empty 
                 && InterestBox.Text != String.Empty)
             {
-                NavigationService.Navigate(new Uri("/Results.xaml?capital=" + CapitalBox.Text + "&months=" + MonthsBox.Text + "&interest=" + InterestBox.Text, UriKind.Relative));
+                int months = int.Parse(YearsBox.Text)*12 + int.Parse(MonthsBox.Text);
+                NavigationService.Navigate(new Uri("/Results.xaml?capital=" + CapitalBox.Text + "&months=" + months + "&interest=" + InterestBox.Text, UriKind.Relative));
             }
             else
             {
