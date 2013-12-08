@@ -5,7 +5,7 @@
     <Language code="en-GB" />
   </Languages>
   <App xmlns="" ProductID="{6ef16323-8d08-467a-800a-145604e0cb0a}" Title="RealMortgageCalculator" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RealMortgageCalculator author" Description="Sample description" Publisher="RealMortgageCalculator" PublisherID="{2ce29163-e538-4efa-aaf4-76b71fca1310}">
-    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">logov1_cuadrado.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
@@ -19,15 +19,20 @@
     <Tokens>
       <PrimaryToken TokenID="RealMortgageCalculatorToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">logov1_cuadrado.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>RealMortgageCalculator</Title>
-          <BackContent></BackContent>
-          <BackBackgroundImageURI></BackBackgroundImageURI>
-          <BackTitle></BackTitle>
-          <DeviceLockImageURI></DeviceLockImageURI>
-          <HasLarge></HasLarge>
+          <BackgroundImageURI IsRelative="true" IsResource="false">logov1_cuadrado.png</BackgroundImageURI>
+          <Title>
+          </Title>
+          <BackContent>
+          </BackContent>
+          <BackBackgroundImageURI IsRelative="true" IsResource="false">
+          </BackBackgroundImageURI>
+          <BackTitle>
+          </BackTitle>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
+          </DeviceLockImageURI>
+          <HasLarge>false</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

@@ -158,6 +158,8 @@
     </Content>
     <Content Include="Images\appbar\share.png" />
     <Content Include="Images\fondo.jpg" />
+    <Content Include="logov1_cuadrado.png" />
+    <Content Include="logov1_redondo.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.en-GB.resx" />
