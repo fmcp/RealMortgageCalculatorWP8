@@ -18,9 +18,33 @@ namespace RealMortgageCalculator
             InitializeComponent();
         }
 
+        private void MonthBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (MonthsBox.Text != String.Empty)
+            {
+                int months = int.Parse(MonthsBox.Text, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
+
+                if (months < 0)
+                    MonthsBox.Text = "0";
+                else if (months > 11)
+                {
+                    int aux = months;
+                    months = months % 12;
+                    MonthsBox.Text = months.ToString();
+                    int years = 0;
+                    if (YearsBox.Text != String.Empty)
+                        years = int.Parse(YearsBox.Text, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
+
+                    years = years + aux / 12;
+                    YearsBox.Text = years.ToString();
+                }
+            }
+        }
+
         void OnClickAccept(object sender, RoutedEventArgs e)
         {
-            if (CapitalBox.Text != String.Empty 
+            if (CapitalBox.Text != String.Empty
+                && YearsBox.Text != String.Empty
                 && MonthsBox.Text != String.Empty 
                 && InterestBox.Text != String.Empty)
             {

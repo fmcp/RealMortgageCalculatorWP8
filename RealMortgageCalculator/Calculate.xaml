@@ -31,8 +31,10 @@
             <StackPanel Background="Transparent">
                 <TextBlock Text="{Binding Path=LocalizedResources.InvertedCapital, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
                 <TextBox x:Name="CapitalBox" IsReadOnly="False" InputScope="Number" />
+                <TextBlock Text="{Binding Path=LocalizedResources.NumberYears, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
+                <TextBox x:Name="YearsBox" IsReadOnly="False" InputScope="Number" />
                 <TextBlock Text="{Binding Path=LocalizedResources.NumberMonth, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
-                <TextBox x:Name="MonthsBox" IsReadOnly="False" InputScope="Number" />
+                <TextBox x:Name="MonthsBox" IsReadOnly="False" InputScope="Number" Text="0" TextChanged="MonthBox_TextChanged"/>
                 <TextBlock Text="{Binding Path=LocalizedResources.AnnualInterest, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
                 <TextBox x:Name="InterestBox" IsReadOnly="False" InputScope="Number" />
                 <Button Name="AcceptButton" Click="OnClickAccept" ClickMode="Press" Content="{Binding Path=LocalizedResources.Calculate, Source={StaticResource LocalizedStrings}}" />

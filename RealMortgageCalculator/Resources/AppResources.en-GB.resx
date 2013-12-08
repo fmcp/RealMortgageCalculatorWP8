@@ -215,4 +215,7 @@
   <data name="YearPay" xml:space="preserve">
     <value>Total paid in a year:</value>
   </data>
+  <data name="NumberYears" xml:space="preserve">
+    <value>Number of years</value>
+  </data>
 </root>

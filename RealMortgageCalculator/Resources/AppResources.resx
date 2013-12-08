@@ -174,7 +174,7 @@
     <value>Capital invertido</value>
   </data>
   <data name="NumberMonth" xml:space="preserve">
-    <value>Número de mensualidades</value>
+    <value>Número de meses</value>
   </data>
   <data name="AmortizationChart" xml:space="preserve">
     <value>Tabla de amortización</value>
@@ -217,5 +217,8 @@
   </data>
   <data name="YearPay" xml:space="preserve">
     <value>Pago anual de más:</value>
+  </data>
+  <data name="NumberYears" xml:space="preserve">
+    <value>Número de años</value>
   </data>
 </root>
