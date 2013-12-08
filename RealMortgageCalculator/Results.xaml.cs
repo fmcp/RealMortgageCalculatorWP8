@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Threading.Tasks;
 using System.Threading;
+using System.ComponentModel;
 
 namespace RealMortgageCalculator
 {
@@ -63,16 +64,67 @@ namespace RealMortgageCalculator
         {
             List<TableElement> ElementsList = await Task.Run(() => calcInt.calcularMatriz());
 
+            BackgroundWorker bw = new BackgroundWorker();
+            bw.WorkerReportsProgress = false;
+            bw.WorkerSupportsCancellation = false;
 
-            Lista.DataContext = ElementsList;
+            bw.DoWork +=
+                 new DoWorkEventHandler(bw_DoWork);
+            bw.RunWorkerCompleted +=
+                new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
+            bw.RunWorkerAsync();
+
+            BackgroundWorker bwCV = new BackgroundWorker();
+            bwCV.WorkerReportsProgress = false;
+            bwCV.WorkerSupportsCancellation = false;
+
+            bwCV.DoWork +=
+                 new DoWorkEventHandler(bw_DoWorkCV);
+            bwCV.RunWorkerCompleted +=
+                new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedCV);
+            bwCV.RunWorkerAsync();
+
+
+
+        }
+
+        /**
+         * Realiza en segundo plano el cálculo de la matriz de amortización
+         **/
+        private void bw_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            e.Result =  calcInt.calcularMatriz();
             
+        }
+
+        /**
+         * Actualiza la interfaz cuando se completa el cálculo de la matriz
+         **/
+        private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Lista.DataContext = e.Result;
             progressBar.Visibility = Visibility.Collapsed;
             loading.Visibility = Visibility.Collapsed;
+        }
 
-            List<TableElement> ElementsList2 = await Task.Run(() => calcInt.calcularMatrizCV());
+        /**
+       * Realiza en segundo plano el cálculo de la matriz de amortización
+       **/
+        private void bw_DoWorkCV(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            e.Result =  calcInt.calcularMatrizCV();
 
-            ListaCV.DataContext = ElementsList2;
 
+        }
+
+        /**
+         * Actualiza la interfaz cuando se completa el cálculo de la matriz
+         **/
+        private void bw_RunWorkerCompletedCV(object sender, RunWorkerCompletedEventArgs e)
+        {
+            ListaCV.DataContext = e.Result;
             progressBar2.Visibility = Visibility.Collapsed;
             loading2.Visibility = Visibility.Collapsed;
         }
