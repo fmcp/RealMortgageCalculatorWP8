@@ -61,17 +61,17 @@ namespace RealMortgageCalculator
          * */
         private async void loadTables()
         {
-            List<TableElement> ElementsList = await calcInt.calcularMatriz();
+            List<TableElement> ElementsList = await Task.Run(() => calcInt.calcularMatriz());
 
-            foreach (TableElement te in ElementsList)
-                Lista.Items.Add(te);
 
+            Lista.DataContext = ElementsList;
+            
             progressBar.Visibility = Visibility.Collapsed;
             loading.Visibility = Visibility.Collapsed;
 
-            ElementsList = await calcInt.calcularMatrizCV();
-            foreach (TableElement te in ElementsList)
-                ListaCV.Items.Add(te);
+            List<TableElement> ElementsList2 = await Task.Run(() => calcInt.calcularMatrizCV());
+
+            ListaCV.DataContext = ElementsList2;
 
             progressBar2.Visibility = Visibility.Collapsed;
             loading2.Visibility = Visibility.Collapsed;

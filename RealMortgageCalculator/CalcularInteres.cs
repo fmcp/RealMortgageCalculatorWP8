@@ -74,10 +74,8 @@ namespace RealMortgageCalculator {
         /**
          * Calcula la matriz usando el método correcto
          **/
-        public Task<List<TableElement>> calcularMatriz()
+        public List<TableElement> calcularMatriz()
         {
-            return Task.Run(() =>
-            {
                 List<TableElement> matriz = new List<TableElement>();
 
                 //Si no han sido calculados los intereses,  se calculan
@@ -102,16 +100,13 @@ namespace RealMortgageCalculator {
                 }
 
                 return matriz;
-            });
         }
 
         /**
          * Calcula la matriz por el método de la cuenta la vieja
          **/
-        public Task<List<TableElement>> calcularMatrizCV()
+        public List<TableElement> calcularMatrizCV()
         {
-            return Task.Run(() =>
-            {
                 List<TableElement> matrizCV = new List<TableElement>();
 
                 //Si no han sido calculados los intereses,  se calculan
@@ -136,7 +131,6 @@ namespace RealMortgageCalculator {
                 }
 
                 return matrizCV;
-            });
         }
 
 
