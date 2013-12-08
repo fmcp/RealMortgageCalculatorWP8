@@ -120,18 +120,10 @@
 
                                                 </Grid.ColumnDefinitions>
 
-												<TextBlock
-													Text="{Binding Path=LocalizedResources.Month, Source={StaticResource LocalizedStrings}}"
-													HorizontalAlignment="Center"  Grid.Column="0"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
-												<TextBlock
-													Text="{Binding Path=LocalizedResources.Debt, Source={StaticResource LocalizedStrings}}"
-												Grid.Column="1" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
-												<TextBlock
-													Text="{Binding Path=LocalizedResources.Amortization, Source={StaticResource LocalizedStrings}}"
-													Grid.Column="2" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
-												<TextBlock
-													Text="{Binding Path=LocalizedResources.Interest, Source={StaticResource LocalizedStrings}}"
-													Grid.Column="3"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+                                                <TextBlock Text="{Binding mes}" HorizontalAlignment="Center"  Grid.Column="0"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+                                                <TextBlock Text="{Binding deuda}"   Grid.Column="1" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+                                                <TextBlock Text="{Binding amortizacion}"   Grid.Column="2" TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
+                                                <TextBlock Text="{Binding interes}"  Grid.Column="3"  TextWrapping="Wrap" Padding="5,5,5,5"></TextBlock>
                                             </Grid>
 
                                         </StackPanel>
