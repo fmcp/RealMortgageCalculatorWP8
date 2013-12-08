@@ -60,10 +60,8 @@ namespace RealMortgageCalculator
         /**
          * Load the amortization tables into the GUI
          * */
-        private async void loadTables()
+        private void loadTables()
         {
-            List<TableElement> ElementsList = await Task.Run(() => calcInt.calcularMatriz());
-
             BackgroundWorker bw = new BackgroundWorker();
             bw.WorkerReportsProgress = false;
             bw.WorkerSupportsCancellation = false;
@@ -72,7 +70,7 @@ namespace RealMortgageCalculator
                  new DoWorkEventHandler(bw_DoWork);
             bw.RunWorkerCompleted +=
                 new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
-            bw.RunWorkerAsync();
+            bw.RunWorkerAsync(calcInt);
 
             BackgroundWorker bwCV = new BackgroundWorker();
             bwCV.WorkerReportsProgress = false;
@@ -82,7 +80,7 @@ namespace RealMortgageCalculator
                  new DoWorkEventHandler(bw_DoWorkCV);
             bwCV.RunWorkerCompleted +=
                 new RunWorkerCompletedEventHandler(bw_RunWorkerCompletedCV);
-            bwCV.RunWorkerAsync();
+            bwCV.RunWorkerAsync(calcInt);
 
 
 
@@ -94,7 +92,7 @@ namespace RealMortgageCalculator
         private void bw_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-            e.Result =  calcInt.calcularMatriz();
+            e.Result =  (e.Argument as CalcularInteres).calcularMatriz();
             
         }
 
@@ -114,7 +112,7 @@ namespace RealMortgageCalculator
         private void bw_DoWorkCV(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-            e.Result =  calcInt.calcularMatrizCV();
+            e.Result = (e.Argument as CalcularInteres).calcularMatrizCV();
 
 
         }
