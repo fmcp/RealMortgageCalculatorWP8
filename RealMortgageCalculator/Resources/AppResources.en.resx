@@ -218,7 +218,10 @@
   <data name="NumberYears" xml:space="preserve">
     <value>Number of years</value>
   </data>
-  <data name="String1" xml:space="preserve">
+  <data name="coin" xml:space="preserve">
     <value>₤</value>
+  </data>
+  <data name="Interest" xml:space="preserve">
+    <value>Interest</value>
   </data>
 </root>
