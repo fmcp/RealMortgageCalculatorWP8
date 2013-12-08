@@ -15,7 +15,7 @@
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>en-GB</SupportedCultures>
+    <SupportedCultures>es%3ben</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>RealMortgageCalculator_$(Configuration)_$(Platform).xap</XapFilename>
@@ -158,11 +158,12 @@
     </Content>
     <Content Include="Images\appbar\share.png" />
     <Content Include="Images\fondo.jpg" />
-    <Content Include="logov1_cuadrado.png" />
-    <Content Include="logov1_redondo.png" />
+    <Content Include="Images\logov1_cuadrado.png" />
+    <Content Include="Images\logov1_redondo.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\AppResources.en-GB.resx" />
+    <EmbeddedResource Include="Resources\AppResources.en.resx" />
+    <EmbeddedResource Include="Resources\AppResources.es.resx" />
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources3.Designer.cs</LastGenOutput>

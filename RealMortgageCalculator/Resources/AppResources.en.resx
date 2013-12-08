@@ -122,23 +122,23 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>en-GB</value>
+    <value>en</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
     <value>Real Mortgage Calculator</value>
   </data>
   <data name="AppBarButtonText" xml:space="preserve">
-    <value>agregar</value>
+    <value>add</value>
   </data>
   <data name="AppBarMenuItemText" xml:space="preserve">
-    <value>Elemento de menú</value>
+    <value>Menu element</value>
   </data>
   <data name="MainWelcome" xml:space="preserve">
     <value>Welcome</value>
   </data>
   <data name="Calculate" xml:space="preserve">
-    <value>Calcular</value>
+    <value>Calculate</value>
   </data>
   <data name="Sign" xml:space="preserve">
     <value>Sign</value>
@@ -177,7 +177,7 @@
     <value>Number of months</value>
   </data>
   <data name="AmortizationChart" xml:space="preserve">
-    <value>Amortizatión chart</value>
+    <value>Amortization chart</value>
   </data>
   <data name="Results" xml:space="preserve">
     <value>Results</value>

@@ -24,6 +24,34 @@ namespace RealMortgageCalculator
             stringsList.Add(AppResources.Calculate);
             stringsList.Add(AppResources.Sign);
             MainMenu.ItemsSource = stringsList;
+
+            ApplicationBar = new ApplicationBar();
+            ApplicationBar.Mode = ApplicationBarMode.Default;
+            ApplicationBar.Opacity = 1.0; 
+            ApplicationBar.IsVisible = true;
+            ApplicationBar.IsMenuEnabled = true;
+
+            ApplicationBarIconButton emailButton = new ApplicationBarIconButton();
+            emailButton.IconUri = new Uri("/Images/appbar/email.png", UriKind.Relative);
+
+            if( System.Threading.Thread.CurrentThread.CurrentCulture.Name.Contains("es"))
+                emailButton.Text = "correo electrónico";
+            else
+                emailButton.Text = "email";
+
+            ApplicationBar.Buttons.Add(emailButton);
+            emailButton.Click += new EventHandler(email_Click);
+
+            ApplicationBarIconButton shareButton = new ApplicationBarIconButton();
+            shareButton.IconUri = new Uri("/Images/appbar/share.png", UriKind.Relative);
+
+            if( System.Threading.Thread.CurrentThread.CurrentCulture.Name.Contains("es"))
+                shareButton.Text = "compartir";
+            else
+                shareButton.Text = "share";
+
+            ApplicationBar.Buttons.Add(shareButton);
+            shareButton.Click += new EventHandler(share_Click);
         }
 
 

@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
-  <DefaultLanguage xmlns="" code="es-ES" />
+  <DefaultLanguage xmlns="" code="en" />
   <Languages xmlns="">
-    <Language code="en-GB" />
+    <Language code="en" />
+    <Language code="es" />
   </Languages>
-  <App xmlns="" ProductID="{6ef16323-8d08-467a-800a-145604e0cb0a}" Title="RealMortgageCalculator" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RealMortgageCalculator author" Description="Sample description" Publisher="RealMortgageCalculator" PublisherID="{2ce29163-e538-4efa-aaf4-76b71fca1310}">
-    <IconPath IsRelative="true" IsResource="false">logov1_cuadrado.png</IconPath>
+  <App xmlns="" ProductID="{6ef16323-8d08-467a-800a-145604e0cb0a}" Title="Real Mortgage Calculator" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="WPCorTeam" Description="" Publisher="RealMortgageCalculator" PublisherID="{2ce29163-e538-4efa-aaf4-76b71fca1310}">
+    <IconPath IsRelative="true" IsResource="false">Images\logov1_cuadrado.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
@@ -19,19 +20,14 @@
     <Tokens>
       <PrimaryToken TokenID="RealMortgageCalculatorToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">logov1_cuadrado.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">Images\logov1_cuadrado.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">logov1_cuadrado.png</BackgroundImageURI>
-          <Title>
-          </Title>
-          <BackContent>
-          </BackContent>
-          <BackBackgroundImageURI IsRelative="true" IsResource="false">
-          </BackBackgroundImageURI>
-          <BackTitle>
-          </BackTitle>
-          <DeviceLockImageURI IsRelative="true" IsResource="false">
-          </DeviceLockImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Images\logov1_cuadrado.png</BackgroundImageURI>
+          <Title></Title>
+          <BackContent></BackContent>
+          <BackBackgroundImageURI IsRelative="true" IsResource="false"></BackBackgroundImageURI>
+          <BackTitle></BackTitle>
+          <DeviceLockImageURI IsRelative="true" IsResource="false"></DeviceLockImageURI>
           <HasLarge>false</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
