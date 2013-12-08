@@ -10,6 +10,7 @@ using Microsoft.Phone.Shell;
 using System.Threading.Tasks;
 using System.Threading;
 using System.ComponentModel;
+using RealMortgageCalculator.Resources;
 
 namespace RealMortgageCalculator
 {
@@ -46,14 +47,14 @@ namespace RealMortgageCalculator
         {
             calcInt = new CalcularInteres(capital,  interest, (int)months);
             calcInt.calcular();
-            interes.Text += " " + String.Format("{0:0.00}", 100 * calcInt.getInteresMes());
-            interesAprox.Text += " " + String.Format("{0:0.00}", 100 * calcInt.getInteresMesCV());
-            cuota.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensual());
-            cuotaAprox.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensualCV()); ;
-            interesAnualAprox.Text += " " + (int)(100 * calcInt.getInteresAnualCV());
+            interes.Text += " " + String.Format("{0:0.00}", 100 * calcInt.getInteresMes()) + "%";
+            interesAprox.Text += " " + String.Format("{0:0.00}", 100 * calcInt.getInteresMesCV()) + "%";
+            cuota.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensual()) + AppResources.coin;
+            cuotaAprox.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensualCV()) + AppResources.coin;
+            interesAnualAprox.Text += " " + (int)(100 * calcInt.getInteresAnualCV()) + AppResources.coin;
             double dif = calcInt.getCuotaMensualCV() - calcInt.getCuotaMensual();
-            pagoAnual.Text += " " + String.Format("{0:0.00}", dif * 12);
-            pagoTotal.Text += " " + String.Format("{0:0.00}", dif * months);
+            pagoAnual.Text += " " + String.Format("{0:0.00}", dif * 12) + AppResources.coin;
+            pagoTotal.Text += " " + String.Format("{0:0.00}", dif * months) + AppResources.coin;
             loadTables();
         }
 

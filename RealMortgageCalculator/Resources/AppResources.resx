@@ -221,4 +221,7 @@
   <data name="NumberYears" xml:space="preserve">
     <value>Número de años</value>
   </data>
+  <data name="coin" xml:space="preserve">
+    <value>€</value>
+  </data>
 </root>
