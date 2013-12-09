@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.ComponentModel;
 using RealMortgageCalculator.Resources;
+using System.Globalization;
 
 namespace RealMortgageCalculator
 {
@@ -49,12 +50,12 @@ namespace RealMortgageCalculator
             calcInt.calcular();
             interes.Text += " " + String.Format("{0:0.00}", 100 * calcInt.getInteresMes()) + "%";
             interesAprox.Text += " " + String.Format("{0:0.00}", 100 * calcInt.getInteresMesCV()) + "%";
-            cuota.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensual()) + AppResources.coin;
-            cuotaAprox.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensualCV()) + AppResources.coin;
-            interesAnualAprox.Text += " " + (int)(100 * calcInt.getInteresAnualCV()) + AppResources.coin;
+            cuota.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensual()) + RegionInfo.CurrentRegion.CurrencySymbol;
+            cuotaAprox.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensualCV()) + RegionInfo.CurrentRegion.CurrencySymbol;
+            interesAnualAprox.Text += " " + (int)(100 * calcInt.getInteresAnualCV()) + RegionInfo.CurrentRegion.CurrencySymbol;
             double dif = calcInt.getCuotaMensualCV() - calcInt.getCuotaMensual();
-            pagoAnual.Text += " " + String.Format("{0:0.00}", dif * 12) + AppResources.coin;
-            pagoTotal.Text += " " + String.Format("{0:0.00}", dif * months) + AppResources.coin;
+            pagoAnual.Text += " " + String.Format("{0:0.00}", dif * 12) + RegionInfo.CurrentRegion.CurrencySymbol;
+            pagoTotal.Text += " " + String.Format("{0:0.00}", dif * months) + RegionInfo.CurrentRegion.CurrencySymbol;
             loadTables();
         }
 

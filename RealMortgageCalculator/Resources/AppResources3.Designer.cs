@@ -133,15 +133,6 @@ namespace RealMortgageCalculator.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a €.
-        /// </summary>
-        public static string coin {
-            get {
-                return ResourceManager.GetString("coin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Deuda.
         /// </summary>
         public static string Debt {
