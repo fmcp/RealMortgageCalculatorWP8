@@ -44,6 +44,10 @@ namespace RealMortgageCalculator
                 interest = float.Parse(msg, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
         }
 
+
+        /**
+         * Función ejecutada al cargarse el pivot
+         **/
         private void Pivot_Loaded(object sender, RoutedEventArgs e)
         {
             calcInt = new CalcularInteres(capital,  interest, (int)months);
@@ -52,11 +56,20 @@ namespace RealMortgageCalculator
             interesAprox.Text += " " + String.Format("{0:0.00}", 100 * calcInt.getInteresMesCV()) + "%";
             cuota.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensual()) + RegionInfo.CurrentRegion.CurrencySymbol;
             cuotaAprox.Text += " " + String.Format("{0:0.00}", calcInt.getCuotaMensualCV()) + RegionInfo.CurrentRegion.CurrencySymbol;
-            interesAnualAprox.Text += " " + (int)(100 * calcInt.getInteresAnualCV()) + RegionInfo.CurrentRegion.CurrencySymbol;
+            interesAnualAprox.Text += " " + (int)(100 * calcInt.getInteresAnualCV()) + "%";
             double dif = calcInt.getCuotaMensualCV() - calcInt.getCuotaMensual();
             pagoAnual.Text += " " + String.Format("{0:0.00}", dif * 12) + RegionInfo.CurrentRegion.CurrencySymbol;
             pagoTotal.Text += " " + String.Format("{0:0.00}", dif * months) + RegionInfo.CurrentRegion.CurrencySymbol;
+
+            double totalPagado = months * calcInt.getCuotaMensual();
+            Activities act = new Activities();
+            act.Add(new ActivityInfo {     Activity = AppResources.InvertedCapital, Count = (int)capital });
+            act.Add(new ActivityInfo {     Activity = AppResources.Interest, Count = (int)(capital-totalPagado) });
+
+            grafico.DataContext = act;
+
             loadTables();
+
         }
 
         /**
@@ -129,5 +142,21 @@ namespace RealMortgageCalculator
             loading2.Visibility = Visibility.Collapsed;
         }
 
+
+    }
+
+    // Class for storing information about an activity
+    public class ActivityInfo
+    {
+        public string Activity { get; set; }
+        public int Count { get; set; }
+    }
+
+    // Class for storing activities
+    public class Activities : List<ActivityInfo>
+    {
+        public Activities()
+        {
+        }
     }
 }

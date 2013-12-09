@@ -221,4 +221,13 @@
   <data name="NumberYears" xml:space="preserve">
     <value>Número de años</value>
   </data>
+  <data name="Charts" xml:space="preserve">
+    <value>Gráficas</value>
+  </data>
+  <data name="GraphicTitle" xml:space="preserve">
+    <value>Pagos de amortización e intereses</value>
+  </data>
+  <data name="Legend" xml:space="preserve">
+    <value>Leyenda</value>
+  </data>
 </root>

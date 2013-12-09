@@ -133,6 +133,15 @@ namespace RealMortgageCalculator.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Gráficas.
+        /// </summary>
+        public static string Charts {
+            get {
+                return ResourceManager.GetString("Charts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Deuda.
         /// </summary>
         public static string Debt {
@@ -178,6 +187,15 @@ namespace RealMortgageCalculator.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Pagos de amortización e intereses.
+        /// </summary>
+        public static string GraphicTitle {
+            get {
+                return ResourceManager.GetString("GraphicTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Interés.
         /// </summary>
         public static string Interest {
@@ -192,6 +210,15 @@ namespace RealMortgageCalculator.Resources {
         public static string InvertedCapital {
             get {
                 return ResourceManager.GetString("InvertedCapital", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Leyenda.
+        /// </summary>
+        public static string Legend {
+            get {
+                return ResourceManager.GetString("Legend", resourceCulture);
             }
         }
         

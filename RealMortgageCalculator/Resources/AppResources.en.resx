@@ -221,4 +221,13 @@
   <data name="Interest" xml:space="preserve">
     <value>Interest</value>
   </data>
+  <data name="Charts" xml:space="preserve">
+    <value>Charts</value>
+  </data>
+  <data name="GraphicTitle" xml:space="preserve">
+    <value>Amortization and Interest fees</value>
+  </data>
+  <data name="Legend" xml:space="preserve">
+    <value>Legend</value>
+  </data>
 </root>

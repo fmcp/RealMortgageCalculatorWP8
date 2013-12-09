@@ -56,5 +56,7 @@ namespace RealMortgageCalculator
                 MessageBox.Show(AppResources.EmptyBoxesMessage, AppResources.EmptyBoxesCaption, MessageBoxButton.OK);
             }
         }
+
     }
+
 }

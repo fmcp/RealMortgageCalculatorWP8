@@ -6,6 +6,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:charting="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+    xmlns:local="clr-namespace:RealMortgageCalculator"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -15,6 +17,11 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
+
+    <phone:PhoneApplicationPage.Resources>
+        <!-- Data -->
+        <local:Activities x:Key="Activities"/>
+    </phone:PhoneApplicationPage.Resources>
     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <!--Control Pivot-->
@@ -23,6 +30,7 @@
             <phone:PivotItem Header="{Binding Path=LocalizedResources.Results, Source={StaticResource LocalizedStrings}}">
                 <Grid>
                     <StackPanel Orientation="Vertical">
+
                         <TextBlock x:Name="cuota" FontSize="23" Padding="10"
                                     Text="{Binding Path=LocalizedResources.MonthlyFee, Source={StaticResource LocalizedStrings}}"
                                    >
@@ -213,6 +221,47 @@
 
                         </StackPanel>
                         
+                    </Grid>
+                </ScrollViewer>
+            </phone:PivotItem>
+            <!-- cuarto Pivot item-->
+            <phone:PivotItem >
+
+                <phone:PivotItem.Header>
+                    <Grid>
+                        <TextBlock Text="{Binding Path=LocalizedResources.Charts, Source={StaticResource LocalizedStrings}}" 
+                                   TextWrapping="Wrap"
+                                   Width="600"
+                                   />
+                    </Grid>
+                </phone:PivotItem.Header>
+                <ScrollViewer>
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <!-- Chart sample -->
+                            <charting:Chart
+                                x:Name="grafico"
+                                Title="{Binding Path=LocalizedResources.GraphicTitle, Source={StaticResource LocalizedStrings}}"
+                                LegendTitle="{Binding Path=LocalizedResources.Legend, Source={StaticResource LocalizedStrings}}"
+                                Background="AliceBlue"
+                                Foreground="Black"
+                                >
+
+                                <!-- Series -->
+                                <charting:PieSeries
+                                    ItemsSource="{Binding}"
+                                    DependentValuePath="Count"
+                                    IndependentValuePath="Activity">
+                                    <charting:PieSeries.LegendItemStyle>
+                                        <Style TargetType="charting:LegendItem">
+                                            <Setter Property="Margin" Value="5 0 5 0"/>
+                                        </Style>
+                                    </charting:PieSeries.LegendItemStyle>
+                                </charting:PieSeries>
+
+                            </charting:Chart>
+                        </StackPanel>
+
                     </Grid>
                 </ScrollViewer>
             </phone:PivotItem>
