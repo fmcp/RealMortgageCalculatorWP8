@@ -245,6 +245,7 @@
                                 LegendTitle="{Binding Path=LocalizedResources.Legend, Source={StaticResource LocalizedStrings}}"
                                 Background="AliceBlue"
                                 Foreground="Black"
+                                Height="300"
                                 >
 
                                 <!-- Series -->
