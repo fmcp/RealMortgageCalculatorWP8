@@ -171,7 +171,7 @@
     <value>Algún campo de texto está vacío</value>
   </data>
   <data name="InvertedCapital" xml:space="preserve">
-    <value>Capital invertido</value>
+    <value>Capital hipoteca</value>
   </data>
   <data name="NumberMonth" xml:space="preserve">
     <value>Número de meses</value>
@@ -189,7 +189,7 @@
     <value>Deuda</value>
   </data>
   <data name="Interest" xml:space="preserve">
-    <value>Interés</value>
+    <value>Tipo de interés</value>
   </data>
   <data name="loading" xml:space="preserve">
     <value>Cargando...</value>
@@ -198,25 +198,25 @@
     <value>Mes</value>
   </data>
   <data name="MonthlyFee" xml:space="preserve">
-    <value>Cuota Mensual:</value>
+    <value>Cuota:</value>
   </data>
   <data name="MonthlyFeeBank" xml:space="preserve">
-    <value>Cuota mensual bancaria:</value>
+    <value>Cuota con aproximación:</value>
   </data>
   <data name="MonthlyInterest" xml:space="preserve">
-    <value>Interes mensual:</value>
+    <value>Tipo de intéres mensual:</value>
   </data>
   <data name="MonthlyInterestBank" xml:space="preserve">
-    <value>Interes mensual bancario:</value>
+    <value>Tipo de interés mensual con aproximación:</value>
   </data>
   <data name="TotalPay" xml:space="preserve">
-    <value>Pago total de más:</value>
+    <value>Pago de mas en todo el préstamo:</value>
   </data>
   <data name="YearInterestBank" xml:space="preserve">
-    <value>Interes anual bancario:</value>
+    <value>Interes anual con aproximación:</value>
   </data>
   <data name="YearPay" xml:space="preserve">
-    <value>Pago anual de más:</value>
+    <value>Pago de más al año:</value>
   </data>
   <data name="NumberYears" xml:space="preserve">
     <value>Número de años</value>

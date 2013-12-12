@@ -171,7 +171,7 @@
     <value>Some text box is empty</value>
   </data>
   <data name="InvertedCapital" xml:space="preserve">
-    <value>Inverted capital</value>
+    <value>Load amount</value>
   </data>
   <data name="NumberMonth" xml:space="preserve">
     <value>Number of months</value>
@@ -183,7 +183,7 @@
     <value>Results</value>
   </data>
   <data name="Amortization" xml:space="preserve">
-    <value>Amortization</value>
+    <value>Principal Paid</value>
   </data>
   <data name="Debt" xml:space="preserve">
     <value>Debt</value>
@@ -195,31 +195,31 @@
     <value>Month</value>
   </data>
   <data name="MonthlyFee" xml:space="preserve">
-    <value>Monthly fee:</value>
+    <value>Payment:</value>
   </data>
   <data name="MonthlyFeeBank" xml:space="preserve">
-    <value>Monthly bank fee:</value>
+    <value>Payment with approximation:</value>
   </data>
   <data name="MonthlyInterest" xml:space="preserve">
-    <value>Monthly interest:</value>
+    <value>Monthly interest rate:</value>
   </data>
   <data name="MonthlyInterestBank" xml:space="preserve">
-    <value>Monthly bank interest:</value>
+    <value>Monthly interest rate with approximation:</value>
   </data>
   <data name="TotalPay" xml:space="preserve">
-    <value>Total pay:</value>
+    <value>Total overpayment:</value>
   </data>
   <data name="YearInterestBank" xml:space="preserve">
     <value>Year interest bank:</value>
   </data>
   <data name="YearPay" xml:space="preserve">
-    <value>Total paid in a year:</value>
+    <value>Overpayment per year:</value>
   </data>
   <data name="NumberYears" xml:space="preserve">
     <value>Number of years</value>
   </data>
   <data name="Interest" xml:space="preserve">
-    <value>Interest</value>
+    <value>Interest rate</value>
   </data>
   <data name="Charts" xml:space="preserve">
     <value>Charts</value>
