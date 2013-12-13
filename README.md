@@ -3,10 +3,18 @@ RealMortgageCalculatorWP8
 
 Aplicación para Windows Phone 8 que calcula los tipos de interés para las hipotecas bancarias
 
+Este proyecto ha sido realizado por Francisco Manuel Castro Payán,
+Fernándo Cobo Aguilera, Antonio Cubero Fernández, Jose Manuel Herruzo Ruiz
+y Manuel Dorado Moreno para la asignatura de Proyectos de 2º de Ingeniería
+Informática de la Universidad de córdoba como práctica final de gurpo de la asignatura.
 
+Todo el software desarrollado para esta aplicación (RealMortgageCalculatorWP8)
+se encuentra bajo licencia Apache License, versión 2.0 (the "License");
+Este archivo no puede ser utilizado exepto en conformidad con la licencia.
 
+Puedes obtener una copia de la licencia en el siguiente enlace o mira abajo:
 
-
+  http://www.apache.org/licenses/LICENSE-2.0
 
 
 Apache License
