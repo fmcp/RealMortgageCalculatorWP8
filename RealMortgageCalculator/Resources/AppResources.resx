@@ -176,9 +176,6 @@
   <data name="NumberMonth" xml:space="preserve">
     <value>Número de meses</value>
   </data>
-  <data name="AmortizationChart" xml:space="preserve">
-    <value>Tabla de amortización</value>
-  </data>
   <data name="Results" xml:space="preserve">
     <value>Resultados</value>
   </data>
@@ -222,12 +219,21 @@
     <value>Número de años</value>
   </data>
   <data name="Charts" xml:space="preserve">
-    <value>Gráficas</value>
+    <value>Gráfica</value>
   </data>
   <data name="GraphicTitle" xml:space="preserve">
     <value>Pagos de amortización e intereses</value>
   </data>
   <data name="Legend" xml:space="preserve">
     <value>Leyenda</value>
+  </data>
+  <data name="AmortizationChart" xml:space="preserve">
+    <value>Tabla de amortización real</value>
+  </data>
+  <data name="AmortizationChartBank" xml:space="preserve">
+    <value>Tabla de amortización bancaria</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total:</value>
   </data>
 </root>

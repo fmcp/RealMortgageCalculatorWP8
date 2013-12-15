@@ -19,6 +19,7 @@ namespace RealMortgageCalculator
     {
 
         private float capital, months, interest;
+        private double totalPagado, totalPagadoAprox;
         CalcularInteres calcInt;
 
 
@@ -61,7 +62,9 @@ namespace RealMortgageCalculator
             pagoAnual.Text += " " + String.Format("{0:0.00}", dif * 12) + RegionInfo.CurrentRegion.CurrencySymbol;
             pagoTotal.Text += " " + String.Format("{0:0.00}", dif * months) + RegionInfo.CurrentRegion.CurrencySymbol;
 
-            double totalPagado = months * calcInt.getCuotaMensual();
+            totalPagado = months * calcInt.getCuotaMensual();
+            totalPagadoAprox = months * calcInt.getCuotaMensualCV();
+
             Activities act = new Activities();
             act.Add(new ActivityInfo {     Activity = AppResources.InvertedCapital, Count = (int)capital });
             act.Add(new ActivityInfo {     Activity = AppResources.Interest, Count = (int)(capital-totalPagado) });
@@ -116,10 +119,16 @@ namespace RealMortgageCalculator
          **/
         private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Lista.DataContext = e.Result;
+            List<TableElement> amortizationList = (List<TableElement>)e.Result;
+            TableElement aux = new TableElement();
+            aux.deuda = AppResources.Total;
+            aux.amortizacion = "" + capital;
+            aux.interes = "" + String.Format("{0:0.00}", totalPagado - capital);
+            amortizationList.Add(aux);
+            Lista.DataContext = amortizationList;
             progressBar.Visibility = Visibility.Collapsed;
             loading.Visibility = Visibility.Collapsed;
-        }
+        } 
 
         /**
        * Realiza en segundo plano el cálculo de la matriz de amortización
@@ -137,7 +146,13 @@ namespace RealMortgageCalculator
          **/
         private void bw_RunWorkerCompletedCV(object sender, RunWorkerCompletedEventArgs e)
         {
-            ListaCV.DataContext = e.Result;
+            List<TableElement> amortizationList = (List<TableElement>)e.Result;
+            TableElement aux = new TableElement();
+            aux.deuda = AppResources.Total;
+            aux.amortizacion = "" + capital;
+            aux.interes = "" + String.Format("{0:0.00}", totalPagadoAprox - capital);
+            amortizationList.Add(aux);
+            ListaCV.DataContext = amortizationList;
             progressBar2.Visibility = Visibility.Collapsed;
             loading2.Visibility = Visibility.Collapsed;
         }
